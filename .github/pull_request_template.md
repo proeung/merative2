@@ -1,6 +1,6 @@
 <!-- Please always provide the [GitHub issue(s)](../issues) or JIRA ticket your PR is for, as well as test URLs where your change can be observed (before and after): -->
 
-<!-- Please feel free to delete options that are not relevant to your PR. -->
+<!-- Feel free to delete options that are not relevant to your PR. -->
 
 ## Issue
 
@@ -8,7 +8,7 @@ Fixes #<gh-issue-id>
 
 ## Description
 
-> Add a human-readable description / detail summary of what the PR is changing and any details around how and why. If applicable, include a screenshot indicating an example or examples of what the PR is changing in the application.
+> Add a human-readable description/detailed summary of what the PR is changing and any details about how and why. If applicable, include a screenshot indicating an example or examples of what the PR is changing in the application.
 
 **New**
 
@@ -24,7 +24,7 @@ Fixes #<gh-issue-id>
 
 ## Design Specs
 
-> If applicable, add in the direct link to the design specs of the component/feature that's part of this PR.
+> If applicable, add the direct link to the design specs of the component/feature that's part of this PR.
 
 - Figma Link -
 
