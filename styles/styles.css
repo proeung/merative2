@@ -353,6 +353,10 @@ max-width: var(--text-max-container);
 margin: 16px 0;
 }
 
+.article-content-wrapper p + p {
+  margin: var(--spacer-element-09) 0 var(--spacer-element-09);
+}
+
 .article-content-wrapper p.lede {
   font-size: var(--font-size-18);
   max-width: var(--text-max-container);
@@ -1505,6 +1509,10 @@ main pre {
 
   .article-content-wrapper p.lede {
     font-size: var(--font-size-24);
+  }
+
+  .article-content-wrapper p + p {
+    margin: var(--spacer-element-10) 0 var(--spacer-element-10);
   }
 
   .article-content-wrapper h1 {
