@@ -48,10 +48,16 @@ export default async function decorate(block) {
   const categoryName = getMetadata('category');
   const categoryBlogPages = await getBlogCategoryPages();
   categoryBlogPages.forEach((row) => {
-    // Check if the path is not '0' and the title matches the categoryName (case-insensitive)
+    // Check if the path is not '0' and the title matches the category name (case-insensitive)
     if ((row.path !== '0') && (row.title.toLowerCase() === categoryName.toLowerCase())) {
-      // Append a link element to liCategory with the path and categoryName (in sentence case)
-      liCategory.append(createLink(row.path, toSentenceCase(categoryName), toSentenceCase(categoryName)));
+      // Append a link element with the path & category name (in sentence case)
+      liCategory.append(
+        createLink(
+          row.path,
+          toSentenceCase(categoryName),
+          toSentenceCase(categoryName),
+        ),
+      );
     }
   });
   ul.append(liHome);
