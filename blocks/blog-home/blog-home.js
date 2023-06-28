@@ -71,7 +71,7 @@ function clearFilters() {
   selectedFiltersTitle.textContent = '';
   const clearAllFilters = document.querySelector('.clear-all-filters');
   clearAllFilters.textContent = '';
-  
+
   if (selectedFiltersList.classList.contains('active')) {
     selectedFiltersList.classList.remove('active');
   }
