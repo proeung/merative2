@@ -71,6 +71,11 @@ function clearFilters() {
   selectedFiltersTitle.textContent = '';
   const clearAllFilters = document.querySelector('.clear-all-filters');
   clearAllFilters.textContent = '';
+  
+  if (selectedFiltersList.classList.contains('active')) {
+    selectedFiltersList.classList.remove('active');
+  }
+
   updateFiltersCount('0');
   loadMoreCards(7);
 }
@@ -172,6 +177,7 @@ function refreshCards() {
       const selectedValue = createTag('div', { class: 'selected-value' });
       selectedValue.append(val);
       selectedFiltersList.append(selectedValue);
+      selectedFiltersList.classList.add('active');
       // Add another event listener for click events to remove this item and uncheck the checkbox
       selectedValue.addEventListener('click', () => {
         uncheckCheckbox(val);
