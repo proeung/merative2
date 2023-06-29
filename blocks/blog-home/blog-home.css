@@ -24,6 +24,20 @@ h5 {
   margin: unset;
 }
 
+.blog-home[data-block-status="loaded"] > .blog-content > .default-content-wrapper {
+  position: relative;
+  padding: var(--spacer-layout-05) var(--spacer-element-07) var(--spacer-layout-05) var(--spacer-element-07);
+  background-color: var(--neutral-bone);
+  width: calc(100% + var(--spacer-element-10));
+  margin: 0 calc(-1 * var(--spacer-element-07));
+}
+
+.blog-home[data-block-status="loaded"] > .blog-content > .default-content-wrapper p {
+  font-family: var(--sans-serif-font-light);
+  font-weight: var(--font-weight-light);
+  margin-bottom: 0;
+}
+
 .blog-home[data-block-status="loaded"] > .blog-content > .blog-cards {
   position: relative;
   display: flex;
@@ -449,16 +463,6 @@ h5 {
   display: none;
 }
 
-@media only screen and (max-width: 1199px) {
-  .blog-home[data-block-status="loaded"] > .blog-content > .default-content-wrapper {
-    position: relative;
-    padding: var(--spacer-layout-05) var(--spacer-element-07) var(--spacer-layout-04) var(--spacer-element-07);
-    background-color: var(--neutral-bone);
-    width: calc(100% + var(--spacer-element-10));
-    margin: 0 calc(-1 * var(--spacer-element-07));
-  }
-}
-
 /* Tablet small and large styles */
 @media only screen and (min-width: 768px) {
   main .section {
@@ -475,9 +479,13 @@ h5 {
     padding: var(--spacer-layout-05) var(--spacer-layout-036);
   }
 
+  .blog-home[data-block-status="loaded"] > .blog-content > .default-content-wrapper {
+    padding: var(--spacer-layout-05) var(--spacer-element-08) var(--spacer-layout-04) var(--spacer-element-08);
+    width: calc(100% + var(--spacer-layout-05));
+    margin: 0 calc(-1 * var(--spacer-element-08));
+  }
+
   .blog-home[data-block-status="loaded"] > .blog-content > .default-content-wrapper p {
-    font-family: var(--sans-serif-font-light);
-    font-weight: var(--font-weight-light);
     font-size: var(--font-size-18);
     line-height: var(--line-height-160);
     letter-spacing: var(--letter-spacing-1);
@@ -596,9 +604,9 @@ h5 {
   }
 
   .blog-home[data-block-status="loaded"] > .blog-content > .default-content-wrapper {
-    padding: 0 var(--spacer-element-08);
-    width: calc(100% + var(--spacer-layout-05));
-    margin: 0 calc(-1 * var(--spacer-element-08));
+    padding: 0;
+    width: auto;
+    margin: 0;
     background-color: var(--neutral-white);
   }
 
