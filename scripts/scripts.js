@@ -123,7 +123,7 @@ function buildTags(main) {
   }
 }
 
-function buildPublicationInfo(main) {
+function buildPublicationInfo() {
   // Check if the publication info element has already been added
   const existingPublicationInfo = document.querySelector('.publication-info-wrapper');
   if (existingPublicationInfo) {
@@ -233,7 +233,7 @@ function buildAutoBlocks(main) {
     buildBlogBreadCrumbBlock();
     buildDocumentUrl(main);
     buildTags(main);
-    buildPublicationInfo(main);
+    buildPublicationInfo();
     buildPageDivider(main);
   } catch (error) {
     // eslint-disable-next-line no-console
