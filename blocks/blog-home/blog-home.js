@@ -52,7 +52,7 @@ function toggleBodyOverflow(val) {
 function updateFiltersCount(count) {
   // update the number of checked filters to show in mobile and tablet views
   const mobileFiltersCount = document.querySelector('.blog-home .filters > .filters-header > h2');
-  mobileFiltersCount.innerHTML = `Filters (${count})`;
+  mobileFiltersCount.innerHTML = count !== null && count !== 0 ? `Filters (${count})` : 'Filters';
 }
 
 function clearFilters() {
@@ -76,7 +76,7 @@ function clearFilters() {
     selectedFiltersList.classList.remove('active');
   }
 
-  updateFiltersCount('0');
+  updateFiltersCount(null);
   loadMoreCards(7);
 }
 

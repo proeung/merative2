@@ -3,13 +3,9 @@ body[filters-open="true"] {
   overflow: hidden;
 }
 
-main {
-  padding-top: var(--nav-height);
+.blog-home.main {
+  padding-top: var(--nav-height-mobile);
   margin: auto;
-}
-
-main .section {
-  padding: unset;
 }
 
 main .section.blog-home-container .blog-home-wrapper {
@@ -68,7 +64,7 @@ h5 {
   height: var(--spacer-element-10);
   padding: var(--spacer-element-05);
   width: 165px;
-  font-family: var(--sans-serif-font-medium);
+  font-family: var(--sans-serif-font-regular);
   font-size: var(--font-size-16);
   letter-spacing: var(--letter-spacing-1);
   line-height: var(--line-height-120);
@@ -107,6 +103,7 @@ h5 {
 .blog-home > .blog-content > .blog-cards > .blog-card:hover {
   border-radius: 0 0 10px 10px;
   box-shadow: 0 1px var(--spacer-element-03) 2px rgba(0 0 0 / 12%);
+  cursor: pointer;
 }
 
 .blog-home > .blog-content > .blog-cards > .blog-card:hover a {
@@ -178,10 +175,17 @@ h5 {
 
 /* Filters */
 
+.filters-main h2 {
+  font-size: var(--font-size-21);
+}
+
+.filters-header h2 {
+  font-size: var(--font-size-18);
+}
+
 .filters-main h2,
 .filters-header h2 {
   margin: unset;
-  font-size: var(--font-size-21);
   font-weight: var(--font-weight-medium);
   font-family: var(--sans-serif-font-regular);
   line-height: var(--line-height-160);
@@ -300,13 +304,13 @@ h5 {
   position: relative;
   font-family: var(--sans-serif-font-medium);
   font-size: var(--font-size-18);
-  letter-spacing: var(--spacer-element-05);
   line-height: 160%;
   background-color: transparent;
   border: 0;
   padding: 25.5px 0 33.5px;
   width: 50%;
   text-align: center;
+  cursor: pointer;
 }
 
 .blog-home .filters[aria-expanded="true"] > .filters-footer > .apply::before {
@@ -349,6 +353,7 @@ h5 {
   display: block;
   position: relative;
   justify-content: center;
+  cursor: pointer;
 }
 
 .blog-home .filters > .filters-main > div > span.list-title::after {
@@ -363,6 +368,7 @@ h5 {
 .blog-home .filters label {
   padding-left: var(--spacer-element-04);
   font-weight: var(--font-weight-light);
+  cursor: pointer;
 }
 
 .blog-home .filters label,
@@ -407,6 +413,7 @@ h5 {
   padding-top: unset;
   font-weight: 500;
   display: flex;
+  align-items: center;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -438,6 +445,7 @@ h5 {
   border-radius: 1px;
   height: 16.5px;
   width: 16.5px;
+  cursor: pointer;
 }
 
 .blog-home .filters input:checked {
@@ -594,8 +602,12 @@ h5 {
 
 /* Desktop styles */
 @media only screen and (min-width: 1200px) {
-  main .section {
-    padding-top: 96px;
+  .blog-home.main {
+    padding-top: calc(var(--nav-height) + 37px);
+  }
+
+  main .section.blog-home-container {
+    padding-top: var(--spacer-layout-06);
   }
 
   main .section.blog-home-container .blog-home-wrapper {
@@ -625,7 +637,7 @@ h5 {
   }
 
   .blog-home[data-block-status="loaded"] > .blog-content > .blog-cards {
-    padding-bottom: var(--spacer-layout-05);
+    padding-bottom: 0;
   }
 
   .blog-home > .blog-content > .blog-cards > .blog-card.featured-article {
@@ -641,6 +653,7 @@ h5 {
       "leftnav cards"
       "leftnav loadmore";
     column-gap: var(--spacer-layout-04);
+    margin-bottom: var(--spacer-layout-07) !important;
   }
 
   .blog-home > .blog-content > .blog-cards > .blog-card:not(.featured-article) {
@@ -659,6 +672,10 @@ h5 {
     width: 264px;
     order: 1;
     grid-area: leftnav;
+  }
+
+  .blog-home .filters[aria-expanded="false"] {
+    padding: var(--spacer-element-05) 0;
   }
 
   .blog-home[data-block-status="loaded"] .filters[aria-expanded="false"] > .filters-header,
@@ -701,11 +718,12 @@ h5 {
     line-height: var(--line-height-160);
     letter-spacing: var(--letter-spacing-1);
     margin-bottom: unset;
+    max-width: inherit;
   }
 
   .blog-home[data-block-status="loaded"] > .blog-content > .load-more {
     grid-area: loadmore;
-    margin: 0 auto 160px;
+    margin: var(--spacer-element-10) auto 0;
   }
 
   .blog-card.featured-article .card-content > a.blog-link {
@@ -771,6 +789,7 @@ h5 {
     font-family: var(--sans-serif-font-medium);
     float: right;
     text-decoration: underline;
+    cursor: pointer;
   }
 
   .blog-home .selected-filters-title > h4 {
