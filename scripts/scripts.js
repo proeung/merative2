@@ -340,7 +340,7 @@ export async function getAllBlogs(category) {
   }
   if (category) {
     // return only blogs that have the same category
-    const result = blogArticles.filter((e) => e.category.trim() === category);
+    const result = blogArticles.filter((e) => e.category.trim().toLowerCase() === category.trim().toLowerCase());
     return (result);
   }
   return (blogArticles);
