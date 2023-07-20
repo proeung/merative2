@@ -101,7 +101,8 @@
     "assets.adobedtm.com",
     "cdn.cookielaw.org",
     "*.medallia.com",
-    "*.kampyle.com"
+    "*.kampyle.com",
+    "*.tt.omtrdc.net"
   ],
   "font-src": [
     "'self'",
