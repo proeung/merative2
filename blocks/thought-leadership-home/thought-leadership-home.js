@@ -1,11 +1,37 @@
+/* eslint-disable no-restricted-syntax */
 import {
   createCard, getSolutionCategoryPages, createTag, getThoughtLeadership,
 } from '../../scripts/scripts.js';
-import { loadMoreCards, createFilters } from '../blog-home/blog-home.js';
+import { loadMoreCards, createFilters, refreshCards } from '../blog-home/blog-home.js';
 
 const NUM_CARDS_SHOWN_AT_A_TIME = 6;
 const MODE = 'thought-leadership-home';
 let loadMoreElement;
+
+function loadPersistedValues() {
+  const params = new URLSearchParams(window.location.search);
+
+  // Clear the existing data from the global object
+  window.queryParam = {};
+
+  // Iterate through the query parameters and update the global object
+  for (const [key, value] of params.entries()) {
+    if (!Object.prototype.hasOwnProperty.call(window.queryParam, key)) {
+      window.queryParam[key] = [];
+    }
+    window.queryParam[key].push(value);
+  }
+
+  const checkboxes = document.querySelectorAll('input[type=checkbox][name=blogFilters]');
+  Array.from(checkboxes).forEach((checkbox) => {
+    const groupName = checkbox.dataset.group;
+    const { value } = checkbox;
+    const isChecked = Object.prototype.hasOwnProperty.call(window.queryParam, groupName)
+      && window.queryParam[groupName].includes(value);
+    checkbox.checked = isChecked;
+  });
+  refreshCards(MODE);
+}
 
 export default async function decorate(block) {
   const category = block.textContent.trim();
@@ -99,6 +125,7 @@ export default async function decorate(block) {
     blogContent.append(blogCards);
     blogContent.append(loadMoreElement);
     block.append(blogContent);
+    loadPersistedValues();
   } else {
     block.remove();
   }

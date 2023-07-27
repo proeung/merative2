@@ -6,6 +6,59 @@ const NUM_CARDS_SHOWN_AT_A_TIME = 6;
 let loadMoreElement;
 const MODE = 'blog-home';
 
+// Function to update the query parameter with the current state of global object.
+function updateQueryParameter() {
+  const params = new URLSearchParams();
+
+  // Convert global object to a query parameter string
+  // eslint-disable-next-line no-restricted-syntax
+  for (const group in window.queryParam) {
+    if (Object.prototype.hasOwnProperty.call(window.queryParam, group)) {
+      const values = window.queryParam[group];
+      values.forEach((value) => {
+        params.append(group, value);
+      });
+    }
+  }
+
+  // Update the browsers history with new URL
+  if (params.toString()) {
+    window.history.replaceState(null, '', `?${params.toString()}`);
+  } else {
+    window.history.replaceState(null, '', window.location.pathname);
+  }
+}
+
+function pushValueToQueryParameter(group, value) {
+  if (!window.queryParam) {
+    window.queryParam = {};
+  }
+  if (Object.prototype?.hasOwnProperty?.call((window.queryParam || {}), group)) {
+    window.queryParam[group].push(value);
+  } else {
+    window.queryParam[group] = [value];
+  }
+  updateQueryParameter();
+}
+
+function popValueFromQueryParameter(group, value) {
+  if (Object.prototype?.hasOwnProperty?.call((window.queryParam || {}), group)) {
+    const index = window.queryParam[group].indexOf(value);
+    if (index !== -1) {
+      window.queryParam[group].splice(index, 1);
+    }
+  }
+  updateQueryParameter();
+}
+
+function clearAllQueryParam() {
+  // Clear the global object
+  window.queryParam = {};
+
+  // Clear all the query parameter from the URL
+  window.history.replaceState(null, '', window.location.pathname);
+}
+
 export function loadMoreCards(num) {
   if (!loadMoreElement) {
     loadMoreElement = document.querySelector('.load-more');
@@ -82,6 +135,9 @@ function clearFilters(mode) {
 
   updateFiltersCount(null, mode);
   loadMoreCards(7);
+  if (mode !== MODE) {
+    clearAllQueryParam();
+  }
 }
 
 async function createCheckboxList(label, group) {
@@ -118,7 +174,7 @@ function uncheckCheckbox(val, mode) {
   }
 }
 
-function refreshCards(mode) {
+export function refreshCards(mode) {
   let hits = 0;
   const checkboxes = document.querySelectorAll('input[type=checkbox][name=blogFilters]');
   // Convert checkboxes to an array to use filter and map.
@@ -189,6 +245,7 @@ function refreshCards(mode) {
       clearFilters(mode);
       deselectAllCheckboxes();
       clearAllFilters.innerText = '';
+      if (mode !== MODE) clearAllQueryParam();
     });
 
     checkedList.forEach((item) => {
@@ -200,6 +257,7 @@ function refreshCards(mode) {
       selectedValue.addEventListener('click', () => {
         uncheckCheckbox(item.value, mode);
         selectedValue.innerText = '';
+        popValueFromQueryParameter(item.group, item.value);
       });
     });
   } else {
@@ -208,7 +266,18 @@ function refreshCards(mode) {
 }
 
 async function addEventListeners(checkboxes, mode) {
-  checkboxes.forEach((checkbox) => checkbox.addEventListener('change', () => refreshCards(mode)));
+  checkboxes.forEach((checkbox) => checkbox.addEventListener('change', (event) => {
+    const { group } = event.target.dataset;
+    const { value } = event.target;
+    if (mode !== MODE) {
+      if (event.target.checked) {
+        pushValueToQueryParameter(group, value);
+      } else {
+        popValueFromQueryParameter(group, value);
+      }
+    }
+    refreshCards(mode);
+  }));
 }
 
 async function createCategories(categoriesList, mode) {
@@ -319,7 +388,7 @@ export async function createFilters(categories, topics, audiences, contentTypes,
   });
   if (audiences.size) {
     await sortArrayOfObjects(audiences, '', 'set').forEach(async (audience) => {
-      audiencesElement.append(await createCheckboxList(audience));
+      audiencesElement.append(await createCheckboxList(audience, 'audience'));
     });
     filtersMain.append(audiencesElement);
   }
@@ -361,7 +430,7 @@ export async function createFilters(categories, topics, audiences, contentTypes,
   });
   if (topics.size) {
     await sortArrayOfObjects(topics, '', 'set').forEach(async (topic) => {
-      topicsElement.append(await createCheckboxList(topic));
+      topicsElement.append(await createCheckboxList(topic, 'topics'));
     });
     filtersMain.append(topicsElement);
   }
