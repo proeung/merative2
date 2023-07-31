@@ -298,12 +298,10 @@ async function createCategories(categoriesList, mode) {
         } else if (row.title) {
           link.innerHTML += `<h5>${row.title}</h5>`;
         }
-      } else {
-        if (row['display-title']) {
-          link.innerHTML += `${row['display-title']}`;
-        } else if (row.title) {
-          link.innerHTML += `${row.title}`;
-        }
+      } else if (row['display-title']) {
+        link.innerHTML += `${row['display-title']}`;
+      } else if (row.title) {
+        link.innerHTML += `${row.title}`;
       }
       categoriesElement.append(link);
     }
