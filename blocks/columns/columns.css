@@ -99,7 +99,6 @@ main .columns-container h4 {
 
 .columns.content-band.icon-list > div > div,
 .columns.content-band.picture-circle > div > div {
-  margin-top: var(--spacer-layout-01);
   margin-bottom: var(--spacer-element-06);
 }
 
