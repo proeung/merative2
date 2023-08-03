@@ -1256,6 +1256,7 @@ main pre {
 .section.section-content-band-list .only-picture {
   justify-content: right;
   display: flex;
+  margin-top: var(--spacer-element-10);
 }
 
 .section.section-content-band-list .only-picture picture {
