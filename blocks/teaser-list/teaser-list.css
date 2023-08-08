@@ -102,13 +102,13 @@
     display: flex;
     padding: calc(var(--spacer-layout-06) - var(--spacer-layout-04)) 0 var(--spacer-layout-06) 0; /* 96px - 48px top padding */
     margin: 0 auto;
-    width: var(--section-width-tablet-small);
+    width: calc(100% - 72px);
     gap: 25px;
     flex-flow: row nowrap;
   }
 
   .section.what-we-do.teaser-list-container > .default-content-wrapper {
-    width: 216px;
+    width: 40%;
   }
 
   .section.what-we-do.teaser-list-container > .default-content-wrapper img {
@@ -116,7 +116,7 @@
   }
 
   .section.what-we-do.teaser-list-container > .teaser-list-wrapper {
-    width: 456px;
+    width: 60%;
   }
 
   .teaser-list .teaser-card {

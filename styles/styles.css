@@ -194,6 +194,7 @@
   --sticky-nav-height: 80px;
 
   /* section widths */
+  --secton-max-container: 1128px;
   --section-width-desktop: 1128px;
   --section-width-mobile: 328px;
   --section-width-tablet-small: 696px;
@@ -401,7 +402,6 @@ main source {
 }
 
 .section > div {
-  width: calc(100% - 47px);
   margin: 0 auto;
 }
 
@@ -439,6 +439,13 @@ main .section[data-section-status='initialized'] {
 
 .columns.section-bottom-grid > div {
   row-gap: 0;
+}
+
+/* Section Container */
+main .section > div {
+  max-width: var(--secton-max-container);
+  margin: 0 auto;
+  width: calc(100% - var(--spacer-layout-04));
 }
 
 main .section > div:first-child {
@@ -1299,9 +1306,9 @@ main pre {
     min-width: inherit;
   }
 
+  /* Section Container */
   main .section > div {
-    width: var(--section-width-tablet-small);
-    margin: 0 auto;
+    width: calc(100% - 72px);
   }
 
   .columns.column-content-top-border div {
@@ -1481,7 +1488,6 @@ main pre {
   }
 
   main .section > div {
-    width: var(--section-width-desktop);
     margin: 0 auto;
   }
 
@@ -1605,6 +1611,11 @@ main pre {
 
   .section-bottom .columns-2-cols > div {
     gap: 120px;
+  }
+
+  /* Section Container */
+  main .section > div {
+    width: 100%;
   }
 
   main .section > div:first-child {

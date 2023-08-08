@@ -661,12 +661,13 @@ main .columns > div > div > h4:first-child {
 
   /* Simple content */
   .columns-container .default-content-wrapper:first-child > * {
-    max-width: 744px; /* 8 columns (72px) + 7 gutters (24px) */
+    max-width: 936px; /* 8 columns (72px) + 7 gutters (24px) */
   }
 
   /* Content band and Overview content */
   .overview.columns-container .default-content-wrapper:first-child > *,
-  .content-band.columns-container .default-content-wrapper:first-child > * {
+  .content-band.columns-container .default-content-wrapper:first-child > *,
+  .section-bottom.columns-container .default-content-wrapper:first-child > * {
     max-width: 648px; /* 7 columns (72px) + 6 gutters (24px) */
   }
 
