@@ -1,7 +1,8 @@
 
 footer {
-  --footer-font-color: var(--neutral-white);
   background-color: var(--neutral-carbon);
+
+  --footer-font-color: var(--neutral-white);
 }
 
 footer .footer-links > div {
