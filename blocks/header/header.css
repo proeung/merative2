@@ -280,12 +280,15 @@ header nav .nav-sections > ul > li {
 @media (min-width: 1200px) {
   /* header */
   header {
-    padding: 37px 0 0;
+    padding: 0;
     max-height: 130px;
+    height: 130px;
+    display: flex;
+    align-items: flex-end;
   }
 
   header.is-sticky {
-    background: var(--neutral-carbon);
+    background-color: var(--neutral-carbon);
     border-bottom: 1px solid var(--neutral-carbon);
     color: var(--neutral-white);
     padding: 0;

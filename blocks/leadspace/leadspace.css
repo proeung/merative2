@@ -404,7 +404,7 @@ main div.leadspace-wrapper {
 
   .leadspace.video .video-wrapper {
     clip-path: circle(60% at 105% 42%);
-    margin-right: 14%;
+    margin-right: 10%;
     margin-top: 0;
     margin-left: var(--spacer-layout-02);
   }
