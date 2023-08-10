@@ -451,7 +451,7 @@ main div.leadspace-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: unset;
-    width: 50%;
+    width: 66.6666%;
   }
 
   .leadspace:not(.event) .button-group,
@@ -460,14 +460,14 @@ main div.leadspace-wrapper {
   }
 
   .leadspace.video .video-wrapper {
-    clip-path: circle(60% at 105% 42%);
-    margin-right: 10%;
+    clip-path: circle(60% at 75% 35%);
+    margin-right: -10%;
     margin-top: 0;
     margin-left: var(--spacer-layout-02);
   }
 
   .leadspace.video .video-wrapper video {
-    height: 640px;
+    height: 680px;
   }
 
   .leadspace.video .video-modal-container {
@@ -482,7 +482,7 @@ main div.leadspace-wrapper {
   }
 
   .leadspace.video .video-control {
-    right: 0;
+    right: 16%;
     bottom: 16%;
   }
 
