@@ -1492,8 +1492,10 @@ main pre {
     padding-top: calc(var(--nav-height) + 37px);
   }
 
+  /* Section Container */
   main .section > div {
     margin: 0 auto;
+    width: 100%;
   }
 
   .tags {
@@ -1616,11 +1618,6 @@ main pre {
 
   .section-bottom .columns-2-cols > div {
     gap: 120px;
-  }
-
-  /* Section Container */
-  main .section > div {
-    width: 100%;
   }
 
   main .section > div:first-child {

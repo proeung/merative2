@@ -260,7 +260,7 @@ main div.leadspace-wrapper {
 /* Video */
 .leadspace.video .video-wrapper {
   clip-path: circle(50% at 50% 50%);
-  margin-right: -40%;
+  margin-right: -33.333%;
   line-height: 0;
 }
 
@@ -325,8 +325,8 @@ main div.leadspace-wrapper {
 .leadspace.video .video-control {
   display: block;
   position: absolute;
-  bottom: 18%;
-  right: 10%;
+  bottom: var(--spacer-element-08);
+  right: 20%;
   visibility: hidden;
   z-index: 2;
 }
@@ -383,6 +383,11 @@ main div.leadspace-wrapper {
   .leadspace:not(.document) > div:first-child {
     flex-flow: row nowrap;
     align-items: flex-end;
+  }
+
+  /* Leadspace Video - Homepage */
+  .leadspace.video > div:first-child {
+    align-items: center;
   }
 
   .leadspace:not(.document) > div:first-child > div {
@@ -450,11 +455,6 @@ main div.leadspace-wrapper {
     margin-top: var(--spacer-element-09);
   }
 
-  /* Leadspace Video - Homepage */
-  .leadspace.video > div:first-child {
-    align-items: center;
-  }
-
   .leadspace.video .video-wrapper {
     clip-path: circle(60% at 105% 42%);
     margin-right: 10%;
@@ -479,6 +479,7 @@ main div.leadspace-wrapper {
 
   .leadspace.video .video-control {
     right: 0;
+    bottom: 16%;
   }
 
   .section.leadspace-container > div:first-child > .leadspace:not(.document) {
@@ -542,6 +543,11 @@ main div.leadspace-wrapper {
     flex-flow: row nowrap;
   }
 
+  /* Leadspace Video - Homepage */
+  .leadspace.video > div:first-child {
+    align-items: flex-start;
+  }
+
   .leadspace:not(.document) > div:first-child > div {
     width: 552px;
   }
@@ -559,6 +565,11 @@ main div.leadspace-wrapper {
     font-size: var(--font-size-14);
   }
 
+  .leadspace.video > div:first-child > div:nth-child(1) h1,
+  .leadspace.video > div:first-child > div:nth-child(1) p {
+    max-width: 550px;
+  }
+
   .leadspace.brand-logo > div:first-child > div:nth-child(1) > p:last-of-type{
     max-width: 420px;
   }
@@ -569,20 +580,10 @@ main div.leadspace-wrapper {
     margin: auto auto auto 0;
   }
 
-  /* Leadspace Video - Homepage */
-  .leadspace.video > div:first-child {
-    align-items: flex-start;
-  }
-
   .leadspace.video > div:first-child > div:nth-child(1) {
     width: 648px;
     margin: var(--spacer-layout-07) 0;
     padding: 0;
-  }
-
-  .leadspace.video > div:first-child > div:nth-child(1) h1,
-  .leadspace.video > div:first-child > div:nth-child(1) p {
-    max-width: 550px;
   }
 
   .leadspace > div > div:nth-child(1) img {
