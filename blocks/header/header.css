@@ -419,21 +419,28 @@ header nav .nav-sections > ul > li {
     background: url('../../icons/caret-down-white.svg') no-repeat right center;
   }
 
+  header nav .nav-sections .nav-drop .section-heading,
+  header nav .nav-sections .nav-drop[aria-expanded='true'] .section-heading,
+  header.is-sticky nav .nav-sections .nav-drop[aria-expanded='true'] .section-heading {
+    display: unset;
+    padding-bottom: 38px;
+    background-image: var(--gradient-left-right);
+    background-size: 0 4px, auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    transition: all .2s ease-out;
+  }
+
   header nav .nav-sections .nav-drop .section-heading:hover,
   header nav .nav-sections .nav-drop[aria-expanded='true'] .section-heading,
   header.is-sticky nav .nav-sections .nav-drop[aria-expanded='true'] .section-heading {
     display: unset;
-    border-bottom-style: solid;
-    border-image-slice: 1;
-    border-image-source: var(--gradient-left-right);
-    border-bottom-width: 4px;
-    padding-bottom: 32px;
+    background-size: 100% 4px, auto;
     z-index: 6;
   }
 
-  header.is-sticky nav .nav-sections .nav-drop[aria-expanded='true'] .section-heading,
-  header.is-sticky nav .nav-sections .nav-drop .section-heading:hover {
-    padding-bottom: 20px;
+  header.is-sticky nav .nav-sections .nav-drop .section-heading {
+    padding-bottom: 25px;
   }
 
   header nav .nav-sections > ul > li > p {
@@ -683,7 +690,7 @@ header nav .nav-sections > ul > li {
   header nav .nav-sections > ul > li[aria-expanded='true'] .mega-menu-content a.button.secondary:hover,
   header nav .nav-sections > ul > li[aria-expanded='true'] .mega-menu-content a.button.secondary:active {
     color: var(--neutral-white);
-    border-style: none;
+    border: 2px solid transparent;
   }
 
   /* Mega menu solution header overrides */

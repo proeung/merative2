@@ -315,6 +315,7 @@ main div.leadspace-wrapper {
   height: 66px;
   width: 66px;
   margin: 0 0 0 var(--spacer-layout-03);
+  transition: background .3s ease-in;
 }
 
 .leadspace.video button.open-video:hover .video-button-icon {
@@ -345,12 +346,15 @@ main div.leadspace-wrapper {
   flex-direction: row-reverse;
   padding: 0;
   cursor: pointer;
+  background-image: var(--gradient-to-right-transparent);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: all .4s ease-in-out;
 }
 
 .leadspace.video .video-control button:hover {
-  background-image: var(--gradient-left-right);
-  border: 0;
-  transition: all .2s ease-in-out;
+  background-image: var(--gradient-to-right-transparent-hover);
+  background-position: 100% 0;
 }
 
 .leadspace.video .video-control button > span {

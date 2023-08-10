@@ -109,6 +109,10 @@
   --gradient-diagonal-up: linear-gradient(214.42deg, var(--primary-red) 12.94%, var(--primary-purple) 88.28%);
   --gradient-vertical: linear-gradient(90deg, var(--primary-purple) 0%, var(--primary-red) 100%);
   --gradient-left-right: linear-gradient(270deg, var(--primary-red), var(--primary-purple));
+  --gradient-to-right: linear-gradient(to right, var(--primary-purple) 0%, var(--primary-purple) 50%, var(--primary-red) 100%);
+  --gradient-to-right-transparent: linear-gradient(to right, transparent 0%, transparent 50%, var(--primary-purple) 100%);
+  --gradient-to-right-transparent-hover: linear-gradient(to right, transparent 0%, var(--primary-purple) 50%, var(--primary-red) 100%);
+  --gradient-to-right-white: linear-gradient(to right, var(--neutral-white) 0%, var(--neutral-white) 50%, var(--primary-red) 100%);
 
   /* neutrals */
   --neutral-carbon: #20201F;
@@ -768,8 +772,11 @@ a.button span.icon.bookmark {
 
 /* Primary Button */
 .button-container a.button.primary {
-  background: var(--primary-purple);
   color: var(--neutral-white);
+  background-image: var(--gradient-to-right);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: all .4s ease-in-out;
 }
 
 .button-container a.button.primary strong {
@@ -781,6 +788,11 @@ a.button span.icon.bookmark {
   border: 2px solid var(--primary-purple);
   font-weight: 500;
   font-style: normal;
+  padding: 13px 26px;
+  background-image: var(--gradient-to-right-white);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: color .3s ease-in-out, background-position .4s ease-in-out;
 }
 
 .button-container a.button.secondary em {
@@ -794,15 +806,14 @@ a.button span.icon.bookmark {
 
 .button-container a.button.primary:hover,
 .button-container a.button.primary:active {
-  background: var(--gradient-left-right);
+  background-position: 100% 0;
 }
 
 .button-container a.button.secondary:hover,
 .button-container a.button.secondary:active {
-  border: none;
-  background: var(--gradient-left-right);
   color: var(--neutral-white);
-  padding: 13px 26px;
+  background-image: var(--gradient-to-right);
+  background-position: 98% 0;
   }
 
 /* Tertiary (Link) Button */

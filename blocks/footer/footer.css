@@ -40,20 +40,26 @@ footer .footer-links > div > div > h3 {
 footer .footer-links .icon {
     width: 40px;
     height: 40px;
-    background-color: var(--neutral-white);
     display: inline-block;
     vertical-align: middle;
     border-radius: 50%;
     text-align: center;
+    background-image: var(--gradient-to-right-white);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: all .3s ease-in-out;
 }
 
-footer .footer-links .icon:hover {
-    background: var(--gradient-left-right);
+footer .footer-links p .icon:hover {
+    background-image: var(--gradient-to-right);
+    background-position: 100% 0;
 }
 
 footer .footer-links .icon-footer-logo {
+    display: inline-block;
     border-radius: 0;
     background-color: transparent;
+    background-image: none;
     font-family: var(--serif-font);
     font-size: var(--font-size-16);
     margin-top: 0;
