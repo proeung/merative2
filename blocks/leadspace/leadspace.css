@@ -221,12 +221,6 @@ main div.leadspace-wrapper {
   margin-top: var(--spacer-element-05);
 }
 
-/* Secondary Button */
-.leadspace .button-group .button-container > em > a.button.secondary:hover,
-.leadspace .button-group .button-container > em > a.button.secondary:active {
-  margin-right: var(--spacer-element-01);
-}
-
 /* Events */
 .leadspace.event p.event-item {
   display: flex;

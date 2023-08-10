@@ -773,6 +773,7 @@ a.button span.icon.bookmark {
 /* Primary Button */
 .button-container a.button.primary {
   color: var(--neutral-white);
+  border: 2px solid var(--primary-purple);
   background-image: var(--gradient-to-right);
   background-position: 0 0;
   background-size: 200% auto;
@@ -806,11 +807,13 @@ a.button span.icon.bookmark {
 
 .button-container a.button.primary:hover,
 .button-container a.button.primary:active {
-  background-position: 100% 0;
+  border: 2px solid transparent;
+  background-position: 99% 0;
 }
 
 .button-container a.button.secondary:hover,
 .button-container a.button.secondary:active {
+  border: 2px solid transparent;
   color: var(--neutral-white);
   background-image: var(--gradient-to-right);
   background-position: 98% 0;
