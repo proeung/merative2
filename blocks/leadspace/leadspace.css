@@ -384,6 +384,10 @@ main div.leadspace-wrapper {
   }
 
   /* Leadspace Video - Homepage */
+  .home-video.leadspace-container > div:last-child {
+    padding-bottom: 0;
+  }
+
   .leadspace.video > div:first-child {
     align-items: center;
   }
@@ -454,14 +458,14 @@ main div.leadspace-wrapper {
   }
 
   .leadspace.video .video-wrapper {
-    clip-path: circle(60% at 75% 35%);
+    clip-path: circle(60% at 75% 32%);
     margin-right: -10%;
     margin-top: 0;
     margin-left: var(--spacer-layout-02);
   }
 
   .leadspace.video .video-wrapper video {
-    height: 680px;
+    height: 640px;
   }
 
   .leadspace.video .video-modal-container {
@@ -491,6 +495,10 @@ main div.leadspace-wrapper {
 
 /** Desktop */
 @media screen and (min-width: 1200px) {
+  .home-video.leadspace-container > div:last-child {
+    padding-bottom: var(--spacer-layout-05);
+  }
+
   .home-video.leadspace-container .leadspace-wrapper {
     padding-top: 0;
   }
@@ -652,7 +660,7 @@ main div.leadspace-wrapper {
   .leadspace.video.scroll-border .scroll-border-wrapper {
     display: flex;
     position: absolute;
-    bottom: -106px;
+    bottom: -92px;
     gap: var(--spacer-layout-03);
     z-index: 2;
   }

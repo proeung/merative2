@@ -451,11 +451,15 @@ main .columns > div > div > h4:first-child {
     flex: unset;
   }
 
-  .section-top.columns-container {
-    background-size: 1700px 150%;
+  /* Section - Top Grid */
+  main .section.section-top > .default-content-wrapper {
+    padding-top: var(--spacer-layout-07);
   }
 
-  /* Section - Top Grid */
+  .section-top.columns-container {
+    background-size: 1850px 125%;
+  }
+
   .section-top-grid > div:nth-of-type(1),
   .section-top-grid > div:nth-of-type(2) {
     gap: var(--gap-84);
@@ -695,12 +699,6 @@ main .columns > div > div > h4:first-child {
     margin: 0 0 var(--spacer-layout-03);
   }
 
-  .section-top.columns-container {
-    background-size: 2600px 150%;
-    padding-bottom: var(--spacer-element-10);
-    padding-top: var(--spacer-layout-06);
-  }
-
   .section-bottom.columns-container {
     background-size: 2600px 239%;
     padding-top: var(--spacer-layout-04);
@@ -723,6 +721,12 @@ main .columns > div > div > h4:first-child {
   }
 
   /* Section - Top Grid */
+  .section-top.columns-container {
+    background-size: 2600px 150%;
+    padding-bottom: var(--spacer-element-10);
+    padding-top: var(--spacer-layout-06);
+  }
+
   .section-top.columns-container .default-content-wrapper:first-child h1 {
     margin-bottom: 64px;
   }
