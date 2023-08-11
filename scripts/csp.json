@@ -34,7 +34,8 @@
       "https://*.hotjar.com",
       "*.tt.omtrdc.net",
       "*.spotify.com",
-      "embed.podcasts.apple.com"
+      "embed.podcasts.apple.com",
+      "bat.bing.com"
   ],
   "connect-src": [
       "'self'",
@@ -78,7 +79,8 @@
     "cm.everesttech.net",
     "*.medallia.com",
     "*.kampyle.com",
-    "*.salesloft.com"
+    "*.salesloft.com",
+    "bat.bing.com"
   ],
   "frame-src": [
     "'self'",
