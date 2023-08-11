@@ -495,14 +495,6 @@ main div.leadspace-wrapper {
 
 /** Desktop */
 @media screen and (min-width: 1200px) {
-  .home-video.leadspace-container > div:last-child {
-    padding-bottom: var(--spacer-layout-05);
-  }
-
-  .home-video.leadspace-container .leadspace-wrapper {
-    padding-top: 0;
-  }
-
   .leadspace, .leadspace p {
     font-size: var(--font-size-21);
   }
@@ -550,6 +542,14 @@ main div.leadspace-wrapper {
   }
 
   /* Leadspace Video - Homepage */
+  .home-video.leadspace-container > div:last-child {
+    padding-bottom: var(--spacer-layout-05);
+  }
+
+  .home-video.leadspace-container .leadspace-wrapper {
+    padding-top: 0;
+  }
+  
   .leadspace.video > div:first-child {
     align-items: flex-start;
   }
