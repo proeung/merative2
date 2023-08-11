@@ -526,6 +526,37 @@ export function createDocumentCard(row, styles) {
 }
 
 /**
+ * Creates a Headshot List using a JSON object and style associated with the List
+ * @param {Object} row JSON Object typically coming from an index array item
+ * @param {Array} styles Class names that needs to be added to the List root div
+ */
+export function createHeadshotList(row, styles) {
+  const list = document.createElement('div');
+  if (styles) list.classList.add(styles);
+
+  console.log('Metadata', row);
+
+  // Add image
+  if (row.image !== '0' && row.title !== '0') {
+    const listImage = document.createElement('div');
+    listImage.classList.add('headshot-list__image');
+    listImage.append(createOptimizedPicture(row.image, row.title));
+    list.prepend(listImage);
+  }
+
+  // Add content
+  const listContent = document.createElement('div');
+  listContent.classList.add('headshot-list__content');
+  
+  if (row.title) listContent.innerHTML += `<h3>${row.title}</h3>`;
+  if (row['display-title']) listContent.innerHTML += `<h4>${row['display-title']}</h4>`;
+  if (row.description) listContent.innerHTML += `<p>${row.description}</p>`;
+  list.append(listContent);
+
+  return (list);
+}
+
+/**
  * Gets details about documents that are indexed
  * @param {Array} pathnames list of pathnames
  */
