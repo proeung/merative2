@@ -80,7 +80,9 @@
     "cm.everesttech.net",
     "*.medallia.com",
     "*.kampyle.com",
-    "*.salesloft.com"
+    "*.salesloft.com",
+    "bat.bing.com",
+    "*.clarity.ms"
   ],
   "frame-src": [
     "'self'",
