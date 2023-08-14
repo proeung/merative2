@@ -35,7 +35,8 @@
       "*.tt.omtrdc.net",
       "*.spotify.com",
       "embed.podcasts.apple.com",
-      "bat.bing.com"
+      "bat.bing.com",
+      "https://www.clarity.ms"
   ],
   "connect-src": [
       "'self'",
@@ -79,8 +80,7 @@
     "cm.everesttech.net",
     "*.medallia.com",
     "*.kampyle.com",
-    "*.salesloft.com",
-    "bat.bing.com"
+    "*.salesloft.com"
   ],
   "frame-src": [
     "'self'",
