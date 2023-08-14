@@ -36,7 +36,7 @@
       "*.spotify.com",
       "embed.podcasts.apple.com",
       "bat.bing.com",
-      "https://www.clarity.ms"
+      "clarity.ms"
   ],
   "connect-src": [
       "'self'",
@@ -61,7 +61,8 @@
       "*.kampyle.com",
       "https://*.hotjar.com",
       "https://*.hotjar.io",
-      "wss://*.hotjar.com"
+      "wss://*.hotjar.com",
+      "*.clarity.ms"
   ],
   "img-src": [
     "'self'",
