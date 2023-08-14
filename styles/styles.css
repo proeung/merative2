@@ -1273,6 +1273,21 @@ main pre {
   background-color: var(--neutral-bone);
 }
 
+/* Section - Content body */
+.section-content-body {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+
+.section-content-body .content-body__left {
+  border: 1px solid yellow;
+}
+
+.section-content-body .content-body__right {
+  border: 1px solid blue;
+}
+
 /* All except mobile */
 @media only screen and (min-width: 768px) {
   main {

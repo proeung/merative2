@@ -663,26 +663,49 @@ function decorateOnlyPicture(main) {
 }
 
 /**
- * Move any content in a Marketo section under marketo wrapper.
+ * Move Marketo into a sidebar area.
  * @param main
  */
-function decorateMarketo(main) {
-  // Move remaining content to marketo wrapper
-  const wrapper = main.querySelector('.marketo-wrapper');
-  if (!wrapper) {
+function restructureContentLayout(main) {
+  // Find the '.section-content-body' element
+  const sectionContentBody = document.querySelector('.section-content-body');
+  if (!sectionContentBody) {
     return;
   }
-  const section = wrapper.closest('.section');
-  [...section.children].forEach((div) => {
-    if (div === wrapper) {
-      return;
-    }
-    if (div.nextElementSibling === wrapper) {
-      wrapper.prepend(div);
-    } else {
-      wrapper.appendChild(div);
-    }
-  });
+
+  // Find the '.marketo-wrapper' element
+  const marketoWrapper = document.querySelector('.marketo-wrapper');
+  if (!marketoWrapper) {
+    return;
+  }
+
+  // Check if '.content-body__left' already exists, otherwise create it
+  let contentBodyLeft = document.querySelector('.content-body__left');
+  if (!contentBodyLeft) {
+    contentBodyLeft = document.createElement('div');
+    contentBodyLeft.classList.add('content-body__left');
+
+    // Get all parent-level elements within '.section-content-body'
+    const parentElements = Array.from(sectionContentBody.children);
+
+    // Iterate through the parent-level elements
+    parentElements.forEach(element => {
+      // Check if the element is either '.default-content-wrapper' or '.headshot-list-wrapper'
+      if (
+        (element.classList.contains('default-content-wrapper') || element.classList.contains('headshot-list-wrapper')) &&
+        !element.classList.contains('marketo-wrapper')
+      ) {
+        // Move the element to '.content-body__left'
+        contentBodyLeft.appendChild(element);
+      }
+    });
+
+    // Insert '.content-body__left' before '.marketo-wrapper'
+    sectionContentBody.insertBefore(contentBodyLeft, marketoWrapper);
+
+    // Add '.content-body__right' class to '.marketo-wrapper'
+    marketoWrapper.classList.add('content-body__right');
+  }
 }
 
 /**
@@ -699,7 +722,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
-  decorateMarketo(main);
+  restructureContentLayout(main);
 }
 
 /**
