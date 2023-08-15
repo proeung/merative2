@@ -311,6 +311,33 @@ export async function lookupBlogs(pathnames) {
 }
 
 /**
+ * Gets details about people that are indexed
+ * @param {Array} pathnames list of pathnames
+ */
+
+export async function lookupPeople(pathnames) {
+  if (!window.peopleIndex) {
+    const resp = await fetch(`${window.hlx.codeBasePath}/people/query-index.json`);
+    const json = await resp.json();
+    const lookup = {};
+    json.data.forEach((row) => {
+      lookup[row.path] = row;
+      if (row.image.startsWith('/default-meta-image.png')) {
+        row.image = getRandomDefaultImage();
+      } else {
+        row.image = `/${window.hlx.codeBasePath}${row.image}`;
+      }
+    });
+    window.peopleIndex = {
+      data: json.data,
+      lookup,
+    };
+  }
+  const result = pathnames.map((path) => window.peopleIndex.lookup[path]).filter((e) => e);
+  return (result);
+}
+
+/**
  * Fetches and transforms data from a JSON file
  * @param {string} path - The path to the JSON file
  * @returns {Promise<Array>} - A promise resolving to the transformed data array
@@ -534,13 +561,11 @@ export function createHeadshotList(row, styles) {
   const list = document.createElement('div');
   if (styles) list.classList.add(styles);
 
-  console.log('Metadata', row);
-
   // Add image
   if (row.image !== '0' && row.title !== '0') {
     const listImage = document.createElement('div');
     listImage.classList.add('headshot-list__image');
-    listImage.append(createOptimizedPicture(row.image, row.title));
+    listImage.appendChild(createOptimizedPicture(row.image, row.title));
     list.prepend(listImage);
   }
 
@@ -548,12 +573,62 @@ export function createHeadshotList(row, styles) {
   const listContent = document.createElement('div');
   listContent.classList.add('headshot-list__content');
   
-  if (row.title) listContent.innerHTML += `<h3>${row.title}</h3>`;
-  if (row['display-title']) listContent.innerHTML += `<h4>${row['display-title']}</h4>`;
-  if (row.description) listContent.innerHTML += `<p>${row.description}</p>`;
-  list.append(listContent);
+  if (row.title) {
+    listContent.innerHTML += `<div class="headshot-list__title">${row.title}</div>`;
+  }
 
-  return (list);
+  if (row['display-title']) {
+    listContent.innerHTML += `<h4>${row['display-title']}</h4>`;
+  }
+
+  if (row.description) {
+    listContent.innerHTML += `<p>${row.description}</p>`;
+  }
+
+  listContent.innerHTML += `<hr></hr>`;
+
+  // Socials
+  const socialLinks = [];
+
+  if (row.twitter) {
+    socialLinks.push({
+      href: row.twitter,
+      label: 'Open Twitter',
+      iconClass: 'icon-twitter'
+    });
+  }
+
+  if (row.linkedin) {
+    socialLinks.push({
+      href: row.linkedin,
+      label: 'Open LinkedIn',
+      iconClass: 'icon-linkedin'
+    });
+  }
+
+  if (socialLinks.length > 0) {
+    const listContentSocial = document.createElement('div');
+    listContentSocial.classList.add('headshot-list__socials');
+
+    socialLinks.forEach(linkInfo => {
+      const link = document.createElement('a');
+      link.href = linkInfo.href;
+      link.target = '_blank';
+      link.setAttribute('aria-label', linkInfo.label);
+
+      const iconSpan = document.createElement('span');
+      iconSpan.classList.add('icon', linkInfo.iconClass);
+      link.appendChild(iconSpan);
+
+      listContentSocial.appendChild(link);
+    });
+
+    decorateIcons(listContentSocial);
+    listContent.appendChild(listContentSocial);
+  }
+  list.appendChild(listContent);
+
+  return list;
 }
 
 /**
@@ -667,44 +742,40 @@ function decorateOnlyPicture(main) {
  * @param main
  */
 function restructureContentLayout(main) {
-  // Find the '.section-content-body' element
+  // Find the Section Content Body element
   const sectionContentBody = document.querySelector('.section-content-body');
   if (!sectionContentBody) {
     return;
   }
 
-  // Find the '.marketo-wrapper' element
+  // Find the Marketo element
   const marketoWrapper = document.querySelector('.marketo-wrapper');
   if (!marketoWrapper) {
     return;
   }
 
-  // Check if '.content-body__left' already exists, otherwise create it
-  let contentBodyLeft = document.querySelector('.content-body__left');
-  if (!contentBodyLeft) {
-    contentBodyLeft = document.createElement('div');
-    contentBodyLeft.classList.add('content-body__left');
+  // Check if '.section-content-body__text' already exists, otherwise create it
+  let contentBodyText = document.querySelector('.section-content-body__text');
+  if (!contentBodyText) {
+    contentBodyText = document.createElement('div');
+    contentBodyText.classList.add('section-content-body__text');
 
     // Get all parent-level elements within '.section-content-body'
     const parentElements = Array.from(sectionContentBody.children);
 
     // Iterate through the parent-level elements
     parentElements.forEach(element => {
-      // Check if the element is either '.default-content-wrapper' or '.headshot-list-wrapper'
-      if (
-        (element.classList.contains('default-content-wrapper') || element.classList.contains('headshot-list-wrapper')) &&
-        !element.classList.contains('marketo-wrapper')
-      ) {
-        // Move the element to '.content-body__left'
-        contentBodyLeft.appendChild(element);
+      // Check if the element is not equal to  '.marketo-wrapper'
+      if (!element.classList.contains('marketo-wrapper')) {
+        contentBodyText.appendChild(element);
       }
     });
 
-    // Insert '.content-body__left' before '.marketo-wrapper'
-    sectionContentBody.insertBefore(contentBodyLeft, marketoWrapper);
+    // Insert '.section-content-body__text' before '.marketo-wrapper'
+    sectionContentBody.insertBefore(contentBodyText, marketoWrapper);
 
-    // Add '.content-body__right' class to '.marketo-wrapper'
-    marketoWrapper.classList.add('content-body__right');
+    // Add '.section-content-body__form' class to '.marketo-wrapper'
+    marketoWrapper.classList.add('section-content-body__form');
   }
 }
 

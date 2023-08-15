@@ -2,14 +2,6 @@
 /* stylelint-disable selector-class-pattern */
 /* stylelint-disable no-descending-specificity */
 
-.section.marketo-container .default-content-wrapper h2 {
-  margin-bottom: 80px;
-}
-
-.section.marketo-container .default-content-wrapper h3 {
-  margin-bottom: var(--spacer-layout-02)
-}
-
 .section.marketo-container.multiple .marketo-wrapper {
   display: flex;
   flex-direction: column;
@@ -58,53 +50,6 @@
 
 .section.marketo-container .marketo-wrapper div.spacious p {
   margin: 0 0 var(--spacer-element-10);
-}
-
-/* Read more/less button */
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more {
-  border-bottom: 1px solid var(--neutral-sand);
-}
-
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: var(--spacer-element-03);
-  font-weight: 700;
-  margin-bottom: var(--spacer-layout-02);
-  cursor: pointer;
-}
-
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more > a:hover,
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more > a:active {
-  background: transparent;
-  color: var(--neutral-carbon);
-  /* stylelint-disable-line */
-  -webkit-text-fill-color: unset;}
-
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more.open > a {
-  margin-top: var(--spacer-layout-06);
-}
-
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more > a::after {
-  content: '';
-  width: 16px;
-  height: 16px;
-  background: url('../../icons/arrow-up-black.svg') no-repeat;
-  transform: rotate(180deg);
-}
-
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more.open > a::after {
-  transform: unset;
-}
-
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more > p:first-of-type ~ *:not(a) {
-  display: none;
-}
-
-.section.marketo-container .marketo-wrapper .default-content-wrapper.show-more.open > p:first-of-type ~ *:not(a) {
-  display: revert;
 }
 
 .marketo {
@@ -162,7 +107,6 @@
 .mktoForm div:first-of-type .mktoFormCol .mktoFieldWrap .mktoHtmlText small {
   float: right;
   font-size: var(--font-size-16);
-  margin-top: 37px;
   text-align: right !important;
 }
 
@@ -230,7 +174,11 @@
 }
 
 .mktoForm .mktoFormCol .mktoLabel {
-  padding-bottom: var(--spacer-layout-01) !important;
+  padding-bottom: var(--spacer-element-04) !important;
+}
+
+.mktoForm .mktoGutter.mktoHasWidth {
+  height: auto;
 }
 
 .mktoForm .mktoRequiredField .mktoLabel::after {

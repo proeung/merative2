@@ -1,8 +1,6 @@
-import { lookupPages, createHeadshotList } from '../../scripts/scripts.js';
+import { lookupPeople, createHeadshotList } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
-  console.log(block.children);
-
   [...block.children].forEach(async (element) => {
     const pathnames = [...element.querySelectorAll('a')].map((a) => {
       const url = new URL(a.href);
@@ -11,7 +9,7 @@ export default async function decorate(block) {
     });
 
     block.textContent = '';
-    const pageList = await lookupPages(pathnames);
+    const pageList = await lookupPeople(pathnames);
     if (pageList.length) {
       pageList.forEach((row) => {
         block.append(createHeadshotList(row, 'headshot-list__item'));
