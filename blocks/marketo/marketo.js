@@ -49,7 +49,7 @@ const embedMarketoForm = (marketoId, formId, successUrl) => {
               });
               hasTrackedFormLoad = true;
             }
-            
+
             f.addHiddenFields({
               RBN_Referral_URL_Cargo__c: document.URL,
             });

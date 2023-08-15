@@ -15,6 +15,5 @@ export default async function decorate(block) {
         block.append(createHeadshotList(row, 'headshot-list__item'));
       });
     }
-
   });
 }

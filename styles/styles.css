@@ -1326,6 +1326,12 @@ main .section-content-body > div:first-child,
   padding: 0;
 }
 
+/* Section - Content body with sidebar text */
+main > .section-content-body.section-with-sidebar .section-content-body__text p {
+  font-size: var(--font-size-16);
+  font-family: var(--sans-serif-font-light);
+}
+
 /* Tablet */
 @media only screen and (min-width: 768px) {
   main {

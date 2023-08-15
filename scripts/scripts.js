@@ -572,7 +572,7 @@ export function createHeadshotList(row, styles) {
   // Add content
   const listContent = document.createElement('div');
   listContent.classList.add('headshot-list__content');
-  
+
   if (row.title) {
     listContent.innerHTML += `<div class="headshot-list__title">${row.title}</div>`;
   }
@@ -585,7 +585,7 @@ export function createHeadshotList(row, styles) {
     listContent.innerHTML += `<p>${row.description}</p>`;
   }
 
-  listContent.innerHTML += `<hr></hr>`;
+  listContent.innerHTML += '<hr></hr>';
 
   // Socials
   const socialLinks = [];
@@ -594,7 +594,7 @@ export function createHeadshotList(row, styles) {
     socialLinks.push({
       href: row.twitter,
       label: 'Open Twitter',
-      iconClass: 'icon-twitter'
+      iconClass: 'icon-twitter',
     });
   }
 
@@ -602,7 +602,7 @@ export function createHeadshotList(row, styles) {
     socialLinks.push({
       href: row.linkedin,
       label: 'Open LinkedIn',
-      iconClass: 'icon-linkedin'
+      iconClass: 'icon-linkedin',
     });
   }
 
@@ -610,7 +610,7 @@ export function createHeadshotList(row, styles) {
     const listContentSocial = document.createElement('div');
     listContentSocial.classList.add('headshot-list__socials');
 
-    socialLinks.forEach(linkInfo => {
+    socialLinks.forEach((linkInfo) => {
       const link = document.createElement('a');
       link.href = linkInfo.href;
       link.target = '_blank';
@@ -743,19 +743,19 @@ function decorateOnlyPicture(main) {
  */
 function restructureContentLayout(main) {
   // Find the Section Content Body element
-  const sectionContentBody = document.querySelector('.section-content-body');
+  const sectionContentBody = main.querySelector('.section-content-body');
   if (!sectionContentBody) {
     return;
   }
 
   // Find the Marketo element
-  const marketoWrapper = document.querySelector('.marketo-wrapper');
+  const marketoWrapper = main.querySelector('.marketo-wrapper');
   if (!marketoWrapper) {
     return;
   }
 
   // Check if '.section-content-body__text' already exists, otherwise create it
-  let contentBodyText = document.querySelector('.section-content-body__text');
+  let contentBodyText = main.querySelector('.section-content-body__text');
   if (!contentBodyText) {
     contentBodyText = document.createElement('div');
     contentBodyText.classList.add('section-content-body__text');
@@ -764,7 +764,7 @@ function restructureContentLayout(main) {
     const parentElements = Array.from(sectionContentBody.children);
 
     // Iterate through the parent-level elements
-    parentElements.forEach(element => {
+    parentElements.forEach((element) => {
       // Check if the element is not equal to  '.marketo-wrapper'
       if (!element.classList.contains('marketo-wrapper')) {
         contentBodyText.appendChild(element);
