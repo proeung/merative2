@@ -114,7 +114,6 @@
   -webkit-box-align: center !important;
   -ms-flex-align: center !important;
   align-items: center !important;
-  background: var(--primary-purple) !important;
   border: 0 !important;
   border-radius: 40px !important;
   box-sizing: border-box !important;
@@ -131,17 +130,17 @@
   margin: 37px 0;
   max-height: 62px !important;
   padding: 11px 16px 11px 24px !important;
-  transition: all .4s ease-in-out !important;
   width: auto !important;
+  background-image: var(--gradient-to-right);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: all .4s ease-in-out;
 }
 
 .mktoForm .mktoButtonWrap .mktoButton:active,
 .mktoForm .mktoButtonWrap .mktoButton:hover {
-  /* background-image: -webkit-gradient(linear, right top, left top, from(#fa1e32), to(var(--primary-purple))) !important; */
-  background-image: linear-gradient(270deg, #fa1e32, var(--primary-purple)) !important;
-
-  /* -webkit-transition: all .2s ease-in-out !important; */
-  transition: all .2s ease-in-out !important;
+  border: 2px solid transparent;
+  background-position: 96% 0;
 }
 
 .mktoForm .mktoButtonWrap .mktoButton::after {

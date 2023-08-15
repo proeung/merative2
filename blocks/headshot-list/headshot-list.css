@@ -81,11 +81,16 @@ main .section > .headshot-list-wrapper {
   border: solid 1px var(--neutral-sand);
   border-radius: 50%;
   background-color: var(--neutral-white);
+  background-image: var(--gradient-to-right-white);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: all .3s ease-in-out;
 }
 
 .headshot-list__content .headshot-list__socials a:hover span.icon,
 .headshot-list__content .headshot-list__socials a:active span.icon {
-  background-image: var(--gradient-left-right);
+  background-image: var(--gradient-to-right);
+  background-position: 100% 0;
 }
 
 .headshot-list__content .headshot-list__socials span.icon svg {
