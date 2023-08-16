@@ -738,17 +738,6 @@ function decorateOnlyPicture(main) {
 }
 
 /**
- * Create a tag with attributes
- */
-function createTagAttribute(tagName, attributes) {
-  const tag = document.createElement(tagName);
-  Object.entries(attributes).forEach(([attr, value]) => {
-    tag[attr] = value;
-  });
-  return tag;
-}
-
-/**
  * Restructure DOM into Two Column Layout.
  * @param main
  */
@@ -783,22 +772,6 @@ function restructureContentLayout(main) {
         contentBodyText.appendChild(element);
       }
     });
-
-    // Add read more/less link to default content
-    if (contentBodyText.textContent.length > SECTION_TEXT_THRESHOLD) {
-      const showMore = createTagAttribute('button', {
-        type: 'button',
-        ariaLabel: 'Read more',
-      });
-      showMore.textContent = 'Read more';
-      showMore.addEventListener('click', () => {
-        contentBodyText.classList.toggle('open');
-        showMore.textContent = contentBodyText.classList.contains('open') ? 'Read less' : 'Read more';
-        showMore.setAttribute('aria-label', showMore.textContent);
-      });
-      contentBodyText.classList.add('show-more');
-      contentBodyText.appendChild(showMore);
-    }
 
     // Insert '.section-content-body__text' before '.marketo-wrapper'
     sectionContentBody.insertBefore(contentBodyText, marketoWrapper);
