@@ -1,7 +1,10 @@
 /* Headshot List */
-main .section > .headshot-list-wrapper {
-  margin-top: var(--spacer-layout-04);
-  margin-bottom: var(--spacer-layout-06);
+.headshot-list-wrapper {
+  margin-bottom: var(--spacer-layout-05);
+}
+
+.headshot-list-wrapper:last-of-type {
+  margin-bottom: 0;
 }
 
 .headshot-list__item {
@@ -107,6 +110,10 @@ main .section > .headshot-list-wrapper {
 
 /* Desktop */
 @media only screen and (min-width: 1200px) {
+  .headshot-list-wrapper {
+    margin-bottom: var(--spacer-layout-06);
+  }
+
   .headshot-list__item {
     margin-bottom: var(--spacer-layout-04);
   }
