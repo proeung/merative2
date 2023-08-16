@@ -85,6 +85,10 @@
   width: 100% !important;
 }
 
+.mktoForm .mktoFieldWrap .mktoHtmlText a {
+  padding: 0 !important;
+}
+
 .mktoForm .mktoFormRow {
   clear: both !important;
 }
