@@ -1,0 +1,33 @@
+
+.quick-links main .section {
+  height: 100vh;
+}
+
+.quick-links .section > div {
+  max-width: var(--text-max-container);
+}
+
+.quick-links main .section > div:last-child {
+  padding: 0;
+}
+
+/* Quick Links Buttons */
+.quick-links-buttons .quick-links-buttons__item {
+  margin-bottom: var(--spacer-element-07);
+}
+
+.quick-links-buttons .quick-links-buttons__item .button-container {
+  width: 100%;
+  display: block;
+}
+
+.quick-links-buttons .quick-links-buttons__item .button-container a {
+  width: 100%;
+  display: block;
+  padding: var(--spacer-element-05) var(--spacer-element-10);
+  border: 1px solid red;
+}
+
+.quick-links-buttons .quick-links-buttons__item .button-container a:before {
+  display: none;
+}

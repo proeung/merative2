@@ -323,8 +323,11 @@ body.appear {
   display: unset;
 }
 
-main {
+body.header-visible main {
   padding-top: var(--nav-height-mobile);
+}
+
+main {
   margin: auto;
 }
 
@@ -1296,9 +1299,6 @@ main pre {
 
 /* All except mobile */
 @media only screen and (min-width: 768px) {
-  main {
-    padding-top: var(--nav-height-mobile)
-  }
 
   main .section.section-header > div:nth-child(1) > p {
     max-width: 60%;
@@ -1502,7 +1502,7 @@ main pre {
     letter-spacing: var(--letter-spacing-1);
   }
 
-  main {
+  body.header-visible main {
     padding-top: calc(var(--nav-height) + 37px);
   }
 
