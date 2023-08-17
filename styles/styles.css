@@ -197,6 +197,7 @@
   --sticky-nav-height: 80px;
 
   /* gap spacers */
+  --gap-16: 16px;
   --gap-24: 24px;
   --gap-48: 48px;
   --gap-84: 84px;
@@ -1299,7 +1300,6 @@ main pre {
 
 /* All except mobile */
 @media only screen and (min-width: 768px) {
-
   main .section.section-header > div:nth-child(1) > p {
     max-width: 60%;
   }

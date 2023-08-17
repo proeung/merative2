@@ -1,33 +1,87 @@
-
-.quick-links main .section {
-  height: 100vh;
+body.quick-links {
+  background-color: var(--neutral-bone);
+  height: 100%;
 }
 
-.quick-links .section > div {
+.quick-links main .section > div,
+.quick-links main .section > div:first-child {
   max-width: var(--text-max-container);
+  margin-bottom: var(--spacer-layout-04);
+}
+
+.quick-links main .section > div:first-child {
+  padding: var(--spacer-layout-04) 0 0 0;
 }
 
 .quick-links main .section > div:last-child {
   padding: 0;
 }
 
+.section-pattern-bar {
+  height: var(--spacer-layout-06);
+}
+
+.bg-health-insights {
+  background-color: var(--neutral-bone);
+  background-image: url('../../styles/images/patterns/pattern-health-insights.svg');
+  background-repeat: repeat-x; 
+  background-size: auto 100%;
+  background-position: bottom center;
+}
+
 /* Quick Links Buttons */
 .quick-links-buttons .quick-links-buttons__item {
-  margin-bottom: var(--spacer-element-07);
+  padding: 0 var(--spacer-element-09);
+  margin-bottom: var(--spacer-element-05);
 }
 
-.quick-links-buttons .quick-links-buttons__item .button-container {
+.quick-links-buttons .quick-links-buttons__item a {
   width: 100%;
   display: block;
-}
-
-.quick-links-buttons .quick-links-buttons__item .button-container a {
-  width: 100%;
-  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--sans-serif-font-medium);
+  font-size: var(--font-size-14);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-1);
   padding: var(--spacer-element-05) var(--spacer-element-10);
-  border: 1px solid red;
+  border-radius: 40px;
+  color: var(--primary-purple);
+  border: 2px solid var(--primary-purple);
+  background-image: var(--gradient-to-right-white);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: all .4s ease-in-out;
 }
 
-.quick-links-buttons .quick-links-buttons__item .button-container a:before {
-  display: none;
+.quick-links-buttons .quick-links-buttons__item a:hover {
+  color: var(--neutral-white);
+  border: 2px solid transparent;
+  background-image: var(--gradient-to-right);
+  background-position: 96% 0;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .section-pattern-bar {
+    height: calc(var(--spacer-layout-06) * 2);
+  }
+
+  .quick-links main .section > div,
+  .quick-links main .section > div:first-child{
+    margin-bottom: var(--spacer-layout-06);
+  }
+
+  .quick-links main .section > div:first-child {
+    padding: var(--spacer-layout-06) 0 0 0;
+  }
+
+  /* Quick Links Buttons */
+  .quick-links-buttons .quick-links-buttons__item {
+    margin-bottom: var(--spacer-element-07);
+  }
+
+  .quick-links-buttons .quick-links-buttons__item a {
+    font-size: var(--font-size-16);
+  }
 }

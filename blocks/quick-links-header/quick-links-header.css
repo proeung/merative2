@@ -1,0 +1,35 @@
+/* Quick Links Header */
+.quick-links-header {
+  background-color: var(--neutral-white);
+  border-radius: 10px;
+}
+
+.quick-links-header .quick-links-header__inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--spacer-element-08) var(--spacer-element-09) !important;
+}
+
+.quick-links-header .quick-links-header__col {
+  width: 50%;
+  line-height: 75%;
+}
+
+.quick-links-header .quick-links-header__col-2 {
+  text-align: right;
+  margin-left: auto;
+}
+
+.quick-links-header a {
+  display: inline-block;
+}
+
+.quick-links-header .icon {
+  display: block;
+}
+
+.quick-links-header .icon svg {
+  width: auto;
+  height: var(--spacer-element-08);
+}
