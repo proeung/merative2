@@ -742,7 +742,6 @@ function decorateOnlyPicture(main) {
  * @param main
  */
 function restructureContentLayout(main) {
-
   // Find the Section Content Body element
   const sectionContentBody = main.querySelector('.section-content-body');
   if (!sectionContentBody) {

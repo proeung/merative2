@@ -121,8 +121,4 @@
   .headshot-list__content .headshot-list__title {
     font-size: var(--font-size-24);
   }
-
-  .headshot-list__content .headshot-list__socials {
-    margin-top: var(--spacer-element-07);
-  }
 }
