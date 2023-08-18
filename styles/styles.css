@@ -93,14 +93,29 @@
   --primary-purple: #9900FF;
   --purple-140: #6400A6;
 
-  /* Merative figma design spec */
-  --primary-red: #FA1E32;
-  --primary-black: #000;
-
-  /* secondary */
+  /* brand secondary */
   --secondary-blue: #1385E2;
   --secondary-green: #05BC71;
   --secondary-yellow: #FFC036;
+  --secondary-orange: #FF8241;
+  --secondary-magenta: #E834BA;
+  --secondary-red: #FB4B5B;
+
+  /* neutrals */
+  --neutral-carbon: #20201F;
+  --neutral-sand: #E7E2DA;
+  --neutral-bone: #FAF8F6;
+  --neutral-white: #FFF;
+  --neutral-grey-tint100: #B9B5AE;
+  --neutral-grey-tint120: #8B8883;
+
+  /* feedback */
+  --feedback-green: #059641;
+  --feedback-red: #D21313;
+
+  /* utility */
+  --primary-red: #FA1E32;
+  --primary-black: #000;
 
   /* gradient */
   --gradient-horizontal-down: linear-gradient(180deg, var(--primary-purple) 0%, var(--primary-red) 100%);
@@ -114,17 +129,9 @@
   --gradient-to-right-transparent-hover: linear-gradient(-270deg, transparent 0%, var(--primary-purple) 50%, var(--primary-red) 100%);
   --gradient-to-right-white: linear-gradient(-270deg, var(--neutral-white) 0%, var(--neutral-white) 50%, var(--primary-red) 100%);
 
-  /* neutrals */
-  --neutral-carbon: #20201F;
-  --neutral-sand: #E7E2DA;
-  --neutral-bone: #FAF8F6;
-  --neutral-white: #FFF;
-  --neutral-grey-tint100: #B9B5AE;
-  --neutral-grey-tint120: #8B8883;
+  /* box shadow */
+  --box-shadow-large: 0 var(--spacer-element-02) var(--spacer-element-06) 0 rgb(185 181 174 / 40%);
 
-  /* feedback */
-  --feedback-green: #059641;
-  --feedback-red: #D21313;
 
   /* ----typography--- */
 
@@ -1298,6 +1305,52 @@ main pre {
   background-color: var(--neutral-bone);
 }
 
+/* Page - Quick Links */
+body.quick-links {
+  background-color: var(--neutral-bone);
+  height: 100%;
+}
+
+.quick-links main .section.section-quick-links > div,
+.quick-links main .section.section-quick-links > div:first-child {
+  max-width: var(--text-max-container);
+  margin-bottom: var(--spacer-layout-04);
+}
+
+.quick-links main .section.section-quick-links > div:first-child {
+  padding: var(--spacer-layout-04) 0 0 0;
+}
+
+.quick-links main .section.section-quick-links > div:last-child {
+  padding: 0;
+}
+
+/* Section - Quick Links */
+.section.section-quick-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--spacer-layout-07));
+}
+
+/* Section - Pattern Bar */
+.section-pattern {
+  height: var(--spacer-layout-07);
+  background-color: var(--neutral-bone);
+  background-repeat: repeat-x; 
+  background-size: auto 100%;
+  background-position: bottom center;
+}
+
+.bg-pattern-health-insights {
+  background-image: url('../../styles/images/patterns/pattern-health-insights.svg');
+}
+
+.bg-pattern-micromedex {
+  background-image: url('../../styles/images/patterns/pattern-micromedex.svg');
+}
+
 /* All except mobile */
 @media only screen and (min-width: 768px) {
   main .section.section-header > div:nth-child(1) > p {
@@ -1397,6 +1450,15 @@ main pre {
     height: 354px;
   }
 
+  /* Page - Quick Links */
+  .quick-links main .section.section-quick-links > div,
+  .quick-links main .section.section-quick-links > div:first-child {
+    margin-bottom: var(--spacer-layout-06);
+  }
+
+  .quick-links main .section.section-quick-links > div:first-child {
+    padding: var(--spacer-layout-06) 0 0 0;
+  }
 }
 
 /* All except desktop */

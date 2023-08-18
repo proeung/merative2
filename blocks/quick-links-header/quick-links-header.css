@@ -2,13 +2,14 @@
 .quick-links-header {
   background-color: var(--neutral-white);
   border-radius: 10px;
+  box-shadow: var(--box-shadow-large);
 }
 
 .quick-links-header .quick-links-header__inner {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: var(--spacer-element-08) var(--spacer-element-09) !important;
+  padding: var(--spacer-element-07) var(--spacer-element-07) !important;
 }
 
 .quick-links-header .quick-links-header__col {
@@ -31,5 +32,18 @@
 
 .quick-links-header .icon svg {
   width: auto;
-  height: var(--spacer-element-08);
+  height: var(--spacer-element-07);
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  /* Quick Links Header */
+  .quick-links-header .quick-links-header__inner {
+    padding: var(--spacer-element-08) var(--spacer-element-09) !important;
+  }
+
+  .quick-links-header .icon svg {
+    width: auto;
+    height: var(--spacer-element-08);
+  }
 }
