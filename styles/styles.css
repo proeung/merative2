@@ -1266,6 +1266,10 @@ main .section-content-body > div:first-child,
   margin-bottom: var(--spacer-layout-05);
 }
 
+main .section.section-content-body > div:last-child {
+  padding-bottom: 0;
+}
+
 .section-content-body .section-content-body__text h3 {
   margin: var(--spacer-layout-05) 0 var(--spacer-layout-02) 0;
 }
@@ -1278,6 +1282,13 @@ main .section-content-body > div:first-child,
   font-size: var(--font-size-18);
   font-family: var(--sans-serif-font-regular);
   margin-top: var(--spacer-layout-04);
+}
+
+.section-content-body .section-content-body__text .default-content-wrapper p,
+.section-content-body .section-content-body__text .default-content-wrapper ul,
+.section-content-body .section-content-body__text .default-content-wrapper ol {
+  font-size: var(--font-size-16);
+  margin: 0 0 var(--spacer-element-05) 0;
 }
 
 .section-content-body .section-content-body__text,
@@ -1343,6 +1354,7 @@ main .section-content-body > div:first-child,
 main > .section-content-body.section-with-sidebar .section-content-body__text p {
   font-size: var(--font-size-16);
   font-family: var(--sans-serif-font-light);
+  margin: var(--spacer-element-05) 0;
 }
 
 /* Tablet */
@@ -1820,6 +1832,13 @@ main > .section-content-body.section-with-sidebar .section-content-body__text p 
   .section-content-body .section-content-body__text .default-content-wrapper h3,
   .section.marketo-container .default-content-wrapper h3 {
     margin: var(--spacer-layout-06) 0 var(--spacer-layout-04) 0;
+  }
+
+  .section-content-body .section-content-body__text .default-content-wrapper p,
+  .section-content-body .section-content-body__text .default-content-wrapper ul,
+  .section-content-body .section-content-body__text .default-content-wrapper ol {
+    font-size: var(--font-size-21);
+    margin: 0 0 var(--spacer-element-10) 0;
   }
 
   .section-content-body .section-content-body__form {
