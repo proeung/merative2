@@ -1,5 +1,10 @@
 export default function decorate(block) {
+  const blockName = block.getAttribute('data-block-name');
+  if (!blockName) {
+    return;
+  }
+
   [...block.children].forEach((element) => {
-    element.classList.add('quick-links-socials__item');
+    element.classList.add(`${blockName}__item`);
   });
 }
