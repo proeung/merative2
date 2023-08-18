@@ -1297,6 +1297,11 @@ main .section.section-content-body > div:last-child {
   padding: 0;
 }
 
+.section-content-body .section-content-body__form h2,
+.section-content-body .section-content-body__form h3 {
+  margin-top: 0;
+}
+
 /* Section - Content body with Read more/less button */
 .section-content-body .section-content-body__text.show-more {
   border-bottom: 1px solid var(--neutral-sand);

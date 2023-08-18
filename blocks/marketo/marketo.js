@@ -75,22 +75,40 @@ const embedMarketoForm = (marketoId, formId, successUrl) => {
 };
 
 export default function decorate(block) {
+  // Read block configuration
   const blockConfig = readBlockConfig(block);
   const marketoId = placeholders.marketoid;
+
+  // Extract form configuration details
+  const formTitle = blockConfig['form-title'];
   const formId = blockConfig['form-id'];
   const successUrl = blockConfig['success-url'];
 
   if (formId && marketoId) {
+    // Create the form element
     const formElement = createTag('form', { id: `mktoForm_${formId}` });
     block.textContent = '';
+
+    // Create and append form title (if available)
+    if (formTitle) {
+      const titleElement = createTag('h2', { id: `${formTitle.toLowerCase()}` });
+      titleElement.textContent = formTitle;
+      block.append(titleElement);
+    }
+
+    // Append the form element
     block.append(formElement);
 
+    // Set up an observer to embed the Marketo form when block is in view
     const observer = new IntersectionObserver((entries) => {
       if (entries.some((e) => e.isIntersecting)) {
+        // Embed the Marketo form
         embedMarketoForm(marketoId, formId, successUrl);
         observer.disconnect();
       }
     });
+
+    // Start observing the block
     observer.observe(block);
   }
 }
