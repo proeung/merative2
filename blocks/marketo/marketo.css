@@ -74,6 +74,7 @@
   letter-spacing: .01em !important;
   line-height: 160% !important;
   width: 100% !important;
+  margin: 0 0 var(--spacer-element-07) 0;
 }
 
 .mktoForm .mktoFieldWrap .mktoHtmlText p {
@@ -347,6 +348,10 @@ input[type=radio] {
   opacity: 1 !important;
   height: 20px !important;
   width: 20px !important;
+  flex-basis: 20px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .mktoForm select.mktoField[multiple] {
@@ -367,8 +372,9 @@ input[type=radio] {
   display: flex;
   width: auto !important;
   align-items: center;
-  padding: 0.3em;
-  float: left;
+  padding: 0 !important;
+  margin: var(--spacer-element-07) 0;
+  float: left !important;
 }
 
 .mktoForm .mktoRadioList > label {
@@ -377,7 +383,7 @@ input[type=radio] {
   font-size: var(--font-size-16) !important;
   letter-spacing: 0.16px;
   line-height: 160% !important;
-  margin: 0 32px 0 8px !important;
+  margin: 0 var(--spacer-element-07) 0 var(--spacer-element-04) !important;
 }
 
 /* Media queries */
