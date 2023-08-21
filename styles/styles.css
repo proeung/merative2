@@ -361,42 +361,6 @@ blockquote {
   margin: var(--spacer-element-05) 0 var(--spacer-element-05);
 }
 
-.article-content-wrapper h1 {
-font-size: var(--font-size-32);
-max-width: var(--text-max-container);
-margin: 16px 0;
-}
-
-.article-content-wrapper p + p {
-  margin: var(--spacer-element-09) 0 var(--spacer-element-09);
-}
-
-.article-content-wrapper p.lede {
-  font-size: var(--font-size-18);
-  max-width: var(--text-max-container);
-}
-
-.article-content-wrapper p.only-picture {
-  margin-top: var(--spacer-element-08);
-}
-
-/* Article Detail - Publication Info */
-.article-content-wrapper .publication-info-wrapper {
-  font-size: var(--font-size-16);
-  margin-top: var(--spacer-element-08);
-  line-height: 160%;
-}
-
-.article-content-wrapper .publication-info-wrapper .pipe {
-  color: var(--neutral-sand);
-  margin: 0 var(--spacer-element-05);
-}
-
-/* Article Detail - Divider */
-.article-content-wrapper .divider {
-  margin: var(--spacer-layout-04) 0;
-}
-
 /* No Paddings */
 .no-pad.section,
 .no-pad.section .default-content-wrapper,
@@ -920,6 +884,43 @@ main ul a:not(.button):active {
 .section > div:first-child > *:first-child > *:first-child { /* no top margin on whatever comes next + 1 inner */
   margin-top: 0;
   padding-top: 0;
+}
+
+/* Article Detail */
+.article-content-wrapper h1 {
+  font-size: var(--font-size-32);
+  max-width: var(--text-max-container);
+  margin: var(--spacer-element-05) 0;
+}
+
+.article-content-wrapper p + p {
+  margin: var(--spacer-element-09) 0 var(--spacer-element-09);
+}
+
+.article-content-wrapper p.lede {
+  font-size: var(--font-size-18);
+  max-width: var(--text-max-container);
+}
+
+.article-content-wrapper p.only-picture {
+  margin-top: var(--spacer-element-08);
+}
+
+/* Article Detail - Publication Info */
+.article-content-wrapper .publication-info-wrapper {
+  font-size: var(--font-size-16);
+  margin-top: var(--spacer-element-08);
+  line-height: 160%;
+}
+
+.article-content-wrapper .publication-info-wrapper .pipe {
+  color: var(--neutral-sand);
+  margin: 0 var(--spacer-element-05);
+}
+
+/* Article Detail - Divider */
+.article-content-wrapper .divider {
+  margin: var(--spacer-layout-04) 0;
 }
 
 .article-content-wrapper .default-content-wrapper p.button-container > a {

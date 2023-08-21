@@ -196,7 +196,8 @@
 .mktoForm .mktoTextField,
 .mktoForm select.mktoField,
 .mktoForm textarea.mktoField {
-  appearance: none !important;
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-appearance: none;
   background: var(--neutral-bone) !important;
   border-color: var(--neutral-carbon) !important;
   border-width: 0 0 1px !important;
@@ -349,7 +350,6 @@ input[type=radio] {
   height: 20px !important;
   width: 20px !important;
   flex-basis: 20px;
-  flex-grow: 0;
   flex-shrink: 0;
   cursor: pointer;
 }
