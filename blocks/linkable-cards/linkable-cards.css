@@ -106,11 +106,6 @@
   stroke: var(--primary-purple);
 }
 
-.section.linkable-cards-container > div:first-child > *:first-child, .section > div:first-child > *:first-child > *:first-child {
-  margin-top: 0;
-  padding-top: 48px;
-}
-
 .linkable-cards.purple-cards a.document-link span.icon svg * {
   stroke: var(--neutral-white);
 }
