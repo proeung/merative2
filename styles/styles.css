@@ -397,6 +397,7 @@ margin: 16px 0;
   margin: var(--spacer-layout-04) 0;
 }
 
+/* No Paddings */
 .no-pad.section,
 .no-pad.section .default-content-wrapper,
 .no-pad.section p {
@@ -404,7 +405,13 @@ margin: 16px 0;
   padding: 0;
 }
 
-/* removes extra space around images */
+.no-pad-bottom.section,
+.no-pad-bottom.section .default-content-wrapper,
+.no-pad-bottom.section p {
+  padding-bottom: 0;
+}
+
+/* Removes extra space around images */
 main p.only-picture,
 main div.only-picture,
 main source {
