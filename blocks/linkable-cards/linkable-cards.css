@@ -1,55 +1,58 @@
 
-/* Linkable cards container styles */
-.linkable-cards-container {
-  background: #7e00d3;
+/* Section - Linkable cards */
+main .section.linkable-cards-container {
   color: var(--neutral-white);
   padding-bottom: 60px;
 }
 
-/* this is considered an eyebrow style */
-.linkable-cards-container h4 {
-  font-family: var(--sans-serif-font-medium);
-  font-size: var(--font-size-11);
-  letter-spacing: .2em;
-  line-height: var(--line-height-120);
-  color: var(--neutral-white);
-  margin: var(--spacer-layout-03) auto;
+main .section.linkable-cards-container.bg-purple {
+  background-color: var(--purple-120);
 }
 
-.linkable-cards-container p {
-  font-size: var(--font-size-16);
+main .section > .linkable-cards-wrapper {
+  padding-bottom: var(--spacer-layout-07);
 }
 
-.linkable-cards-container.related-resources-container h4 {
-  color: var(--neutral-carbon);
-}
-
-.neutral-bone-style .linkable-cards-container {
-  background-color: var(--neutral-bone);
-}
-
-/* Linkable cards block */
+/* Block - Linkable cards */
 .linkable-cards {
   overflow: auto;
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: var(--spacer-element-10) var(--spacer-element-07);
-  margin-right: -15px;
+  gap: var(--spacer-element-07);
 }
 
-.linkable-cards > div {
+.linkable-cards > .linkable-cards__item {
   flex: 1;
   background: var(--neutral-bone);
   border-radius: 10px;
   min-height: 435px;
   min-width: 255px;
   max-width: 255px;
-  margin: 0 var(--spacer-element-02) var(--spacer-element-06);
+  margin: 0;
   position: relative;
-  padding: 48px 24px 24px;
 }
 
+.linkable-cards > .linkable-cards__item a {
+  display: block;
+  padding: var(--spacer-element-10) var(--spacer-element-07);
+  height: 100%;
+}
+
+.linkable-cards > .linkable-cards__item a:nth-child(1) > p:first-child {
+  font-family: var(--sans-serif-font-medium);
+  font-size: var(--font-size-11);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-02-em);
+  line-height: var(--line-height-120);
+  margin: 0;
+}
+
+.linkable-cards > .linkable-cards__item a:nth-child(1) > h3 {
+  margin: var(--spacer-element-06) 0 var(--spacer-element-07);
+}
+
+/* Section (Documents) - Linkable cards */
 .linkable-cards-container .default-content-wrapper h5,
 .linkable-cards-container .linkable-cards .document-category,
 .linkable-cards-container .linkable-cards .document-category code {
@@ -113,11 +116,6 @@
 .linkable-cards a.document-link span.icon.video svg * {
   stroke: none;
   fill: var(--primary-purple);
-}
-
-.section.linkable-cards-container > div:last-child > *:last-child > *:last-child {
-  margin: 0 var(--spacer-element-02) var(--spacer-element-06);
-  padding: 48px 24px 24px;
 }
 
 .linkable-cards.purple-cards a.document-link span.icon.video svg * {
@@ -205,37 +203,18 @@
   color: var(--neutral-white);
 }
 
-/* if we make all eyebrows h4 then we don't need this */
-.linkable-cards a:nth-child(1) > p:first-child {
-  font-family: var(--sans-serif-font-medium);
-  font-size: var(--font-size-11);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-02-em);
-  line-height: var(--line-height-120);
-  margin: 0;
-}
-
-.linkable-cards a:nth-child(1) > h3 {
-  margin: var(--spacer-element-06) 0 var(--spacer-element-07);
-}
-
 .linkable-cards.lc-static-style {
   flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {
-  .linkable-cards > div {
-    min-height: 405px;
-    min-width: 315px;
-    max-width: 315px;
+  .linkable-cards > .linkable-cards__item {
+    width: 100%;
+    max-width: 360px;
+    min-height: 445px;
   }
 }
 @media (min-width: 1200px) {
-  .linkable-cards > div {
-    min-height: 445px;
-    min-width: 335px;
-    max-width: 335px;
-  }
 
   .linkable-cards .document-card .document-category,
   .linkable-cards .document-card .document-category code {

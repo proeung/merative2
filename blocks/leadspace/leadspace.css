@@ -200,7 +200,7 @@ main div.leadspace-wrapper {
 .leadspace .button-group {
   display: flex;
   flex-flow: column;
-  gap: var(--spacer-layout-01);
+  gap: var(--spacer-element-08);
 }
 
 /* Any button */

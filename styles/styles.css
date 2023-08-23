@@ -91,6 +91,7 @@
   /* primary */
   /* stylelint-disable-next-line color-hex-length */
   --primary-purple: #9900FF;
+  --purple-120: #7E00D3;
   --purple-140: #6400A6;
 
   /* Merative figma design spec */
@@ -149,6 +150,7 @@
   --font-size-14: 14px;
   --font-size-12: 12px;
   --font-size-11: 11px;
+  --font-size-128: 128px;
 
   /* font weight */
   --font-weight-light: 300;
