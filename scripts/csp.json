@@ -64,7 +64,7 @@
       "https://*.hotjar.io",
       "wss://*.hotjar.com",
       "*.clarity.ms",
-      "*.licdn.com"
+      "cdn.linkedin.oribi.io"
   ],
   "img-src": [
     "'self'",
@@ -86,7 +86,7 @@
     "*.salesloft.com",
     "bat.bing.com",
     "*.clarity.ms",
-    "*.licdn.com"
+    "px.ads.linkedin.com"
   ],
   "frame-src": [
     "'self'",
