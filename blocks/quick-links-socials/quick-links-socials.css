@@ -1,4 +1,10 @@
-/* Quick Links Socials */
+/* Section - Quick Links Socials */
+main .section .quick-links-socials-wrapper,
+main .section > .quick-links-socials-wrapper:last-child {
+  margin-top: var(--spacer-layout-05);
+}
+
+/* Block - Quick Links Socials */
 .quick-links-socials {
   display: flex;
   flex-direction: row;
@@ -48,7 +54,7 @@
 
 /* Tablet */
 @media only screen and (min-width: 768px) {
-  /* Quick Links Socials */
+  /* Block - Quick Links Socials */
   .quick-links-socials {
     display: flex;
     flex-direction: row;

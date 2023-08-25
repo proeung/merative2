@@ -1390,21 +1390,18 @@ main > .section-content-body.section-with-sidebar .section-content-body__text p 
 
 /* Page - Quick Links */
 body.quick-links {
-  background-color: var(--neutral-bone);
+  background-color: var(--neutral-white);
   height: 100%;
 }
 
-.quick-links main .section.section-quick-links > div,
-.quick-links main .section.section-quick-links > div:first-child {
+body.quick-links > main {
   max-width: var(--text-max-container);
-  margin-bottom: var(--spacer-layout-04);
+  margin: 0 auto;
+  background-color: var(--neutral-bone);
 }
 
-.quick-links main .section.section-quick-links > div:first-child {
-  padding: var(--spacer-layout-04) 0 0 0;
-}
-
-.quick-links main .section.section-quick-links > div:last-child {
+body.quick-links main .section > div {
+  max-width: inherit;
   padding: 0;
 }
 
@@ -1414,16 +1411,17 @@ body.quick-links {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - var(--spacer-layout-07));
+  min-height: calc(100vh - var(--gap-84) * 2);
+  padding: var(--spacer-layout-06) 0;
 }
 
 /* Section - Pattern Bar */
 .section-pattern {
-  height: var(--spacer-layout-07);
+  height: var(--gap-84);
   background-color: var(--neutral-bone);
   background-repeat: repeat-x; 
   background-size: auto 100%;
-  background-position: bottom center;
+  background-position: bottom left;
 }
 
 .bg-pattern-health-insights {
@@ -1535,14 +1533,14 @@ body.quick-links {
     font-size: var(--font-size-21);
   }
 
-  /* Page - Quick Links */
-  .quick-links main .section.section-quick-links > div,
-  .quick-links main .section.section-quick-links > div:first-child {
-    margin-bottom: var(--spacer-layout-06);
+  /* Section - Quick Links */
+  .section.section-quick-links {
+    min-height: calc(100vh - var(--gap-120) * 2);
   }
 
-  .quick-links main .section.section-quick-links > div:first-child {
-    padding: var(--spacer-layout-06) 0 0 0;
+  /* Section - Pattern Bar */
+  .section-pattern {
+    height: var(--gap-120);
   }
 }
 
