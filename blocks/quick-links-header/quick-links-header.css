@@ -36,7 +36,7 @@ main > .section.quick-links-header-container > div {
 
 .quick-links-header .icon svg {
   width: auto;
-  height: var(--spacer-element-08);
+  height: var(--spacer-element-07);
 }
 
 /* Tablet */
