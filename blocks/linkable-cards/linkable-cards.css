@@ -89,7 +89,7 @@ main .section > .linkable-cards-wrapper {
   box-shadow: 2px 4px 4px 2px rgb(0 0 0 / 15%);
 }
 
-.linkable-cards .card a > p:first-child {
+.linkable-cards .card a > p:first-of-type {
   font-family: var(--sans-serif-font-medium);
   font-size: var(--font-size-14);
   text-transform: uppercase;
@@ -102,7 +102,7 @@ main .section > .linkable-cards-wrapper {
   margin: var(--spacer-element-06) 0 var(--spacer-element-07);
 }
 
-.linkable-cards .card a > p:last-child {
+.linkable-cards .card a > p:last-of-type {
   font-size: var(--font-size-16);
   margin: var(--spacer-layout-05) 0 var(--spacer-layout-02) 0;
 }
