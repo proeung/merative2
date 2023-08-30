@@ -223,6 +223,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html *,
@@ -1545,7 +1546,11 @@ body.quick-links main .section > div {
 }
 
 /* All except desktop */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {  
+  html {
+    scroll-padding-top: calc(var(--nav-height-mobile) + var(--spacer-element-03));
+  }
+
   h1,
   h2,
   h3 {
@@ -1600,6 +1605,10 @@ body.quick-links main .section > div {
 
 /* Desktop */
 @media only screen and (min-width: 1200px) {
+  html {
+    scroll-padding-top: calc(var(--sticky-nav-height) + var(--spacer-element-03));
+  }
+
   h1,
   h2,
   h3 {
