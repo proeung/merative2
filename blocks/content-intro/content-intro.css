@@ -11,14 +11,14 @@
   margin-bottom: 0;
 }
 
-.content-intro__col-2 {
+.content-intro .content-intro__col-2 {
   font-size: var(--font-size-16);
   font-weight: 300;
   line-height: 160%;
   margin-top: var(--spacer-element-05);
 }
 
-p.content-intro__eyebrow {
+.content-intro p.content-intro__eyebrow {
   font-family: var(--sans-serif-font-medium);
   text-transform: uppercase;
   font-size: var(--font-size-11);
@@ -27,13 +27,17 @@ p.content-intro__eyebrow {
   margin: 0 0 var(--spacer-element-07) 0;
 }
 
+.content-intro .button-container {
+  margin-top: var(--spacer-element-08);
+}
+
 /* Tablet */
 @media only screen and (min-width: 768px) {
-  .content-intro__col-1 {
+  .content-intro .content-intro__col-1 {
     width: 75%;
   }
   
-  .content-intro__col-2 {
+  .content-intro .content-intro__col-2 {
     width: 75%;
     margin-top: var(--spacer-element-07);
   }
@@ -53,19 +57,19 @@ p.content-intro__eyebrow {
     margin-top: var(--spacer-element-08);
   }
 
-  .content-intro__col-1 {
+  .content-intro .content-intro__col-1 {
     width: 66.66%;
     max-width: var(--text-max-container);
   }
   
-  .content-intro__col-2 {
+  .content-intro .content-intro__col-2 {
     width: 33.33%;
     max-width: 360px;
     font-size: var(--font-size-21);
     margin-top: var(--spacer-layout-05);
   }
 
-  p.content-intro__eyebrow {
+  .content-intro p.content-intro__eyebrow {
     font-size: var(--font-size-14);
     margin: 0 0 var(--spacer-element-08) 0;
   }

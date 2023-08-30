@@ -153,6 +153,7 @@
   --font-size-14: 14px;
   --font-size-12: 12px;
   --font-size-11: 11px;
+  --font-size-96: 96px;
   --font-size-128: 128px;
 
   /* font weight */
@@ -820,7 +821,7 @@ a.button span.icon.bookmark {
   font-weight: 500;
 }
 
-.button-container a.button.primary span.icon > svg * {
+.button-container a.button.primary span.icon-play-button > svg * {
   fill: var(--neutral-white);
 }
 
