@@ -200,7 +200,7 @@
   /* nav height */
   --nav-height: 93px;
   --nav-height-mobile: 93px;
-  --nav-height-mobile-section: 93px;
+  --nav-height-desktop: 130px;
   --sticky-nav-height: 80px;
 
   /* gap spacers */
@@ -330,10 +330,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Set body to display when content has been loaded */
 body.appear {
   display: unset;
 }
 
+/* Add padding-top when Header Nav is visible */
 body.header-visible main {
   padding-top: var(--nav-height-mobile);
 }
@@ -1656,8 +1658,9 @@ body.quick-links main .section > div {
     letter-spacing: var(--letter-spacing-1);
   }
 
+  /* Add padding-top when Header Nav is visible */
   body.header-visible main {
-    padding-top: calc(var(--nav-height) + 37px);
+    padding-top: var(--nav-height-desktop);
   }
 
   /* Section Container */
