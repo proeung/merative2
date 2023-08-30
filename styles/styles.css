@@ -114,12 +114,15 @@
   --gradient-to-right-transparent: linear-gradient(-270deg, transparent 0%, transparent 50%, var(--primary-purple) 100%);
   --gradient-to-right-transparent-hover: linear-gradient(-270deg, transparent 0%, var(--primary-purple) 50%, var(--primary-red) 100%);
   --gradient-to-right-white: linear-gradient(-270deg, var(--neutral-white) 0%, var(--neutral-white) 50%, var(--primary-red) 100%);
+  --gradient-to-right-purple-140: linear-gradient(-270deg, var(--purple-140) 0%, var(--purple-140) 50%, var(--primary-red) 100%);
+  --gradient-to-right-neutral-carbon: linear-gradient(-270deg, var(--neutral-carbon) 0%, var(--neutral-carbon0) 50%, var(--primary-red) 100%);
 
   /* neutrals */
   --neutral-carbon: #20201F;
   --neutral-sand: #E7E2DA;
   --neutral-bone: #FAF8F6;
   --neutral-white: #FFF;
+  --neutral-160: #454544;
   --neutral-grey-tint100: #B9B5AE;
   --neutral-grey-tint120: #8B8883;
 
@@ -213,6 +216,64 @@
   --section-width-tablet-large: 928px;
   --text-max-container: 648px;
   --sidebar-max-container: 360px;
+}
+
+/* Theme */
+.section[data-theme='purple'] {
+  --theme-text-primary: var(--neutral-white);
+  --theme-text-secondary: var(--neutral-white);
+  --theme-background-color: var(--purple-120);
+  --theme-card-background-color: var(--purple-140);
+  --theme-icon-01: var(--neutral-white);
+  --theme-link-01: var(--neutral-white);
+  --theme-button-bg: var(--gradient-to-right-purple-140);
+  --theme-button-bg-hover: var(--gradient-to-right-purple-140);
+  --theme-button-border: var(--neutral-white);
+  --theme-button-hover: var(--neutral-white);
+}
+
+.section[data-theme='carbon'] {
+  --theme-text-primary: var(--neutral-white);
+  --theme-text-secondary: var(--neutral-white);
+  --theme-background-color: var(--neutral-carbon);
+  --theme-card-background-color: var(--neutral-160);
+  --theme-icon-01: var(--neutral-white);
+  --theme-link-01: var(--neutral-white);
+  --theme-button-bg: var(--gradient-to-right-neutral-carbon);
+  --theme-button-bg-hover: var(--gradient-to-right-neutral-carbon);
+  --theme-button-border: var(--neutral-160);
+  --theme-button-hover: var(--neutral-white);
+}
+
+.section[data-theme='neutral-bone'] {
+  --theme-text-primary: var(--neutral-carbon);
+  --theme-text-secondary: var(--neutral-carbon);
+  --theme-background-color: var(--neutral-bone);
+  --theme-card-background-color: var(--neutral-white);
+  --theme-icon-01: var(--primary-purple);
+  --theme-link-01: var(--primary-purple);
+  --theme-button-bg: var(--gradient-to-right-white);
+  --theme-button-bg-hover: var(--gradient-to-right);
+  --theme-button-border: var(--primary-purple);
+  --theme-button-hover: var(--neutral-white);
+}
+
+.section[data-theme='white'] {
+  --theme-text-primary: var(--neutral-carbon);
+  --theme-text-secondary: var(--neutral-carbon);
+  --theme-background-color: var(--neutral-white);
+  --theme-card-background-color: var(--neutral-bone);
+  --theme-icon-01: var(--primary-purple);
+  --theme-link-01: var(--primary-purple);
+  --theme-button-bg: var(--gradient-to-right-white);
+  --theme-button-bg-hover: var(--gradient-to-right);
+  --theme-button-border: var(--primary-purple);
+  --theme-button-hover: var(--neutral-white);
+}
+
+.section[data-theme] {
+  color: var(--theme-text-primary);
+  background-color: var(--theme-background-color);
 }
 
 html {
@@ -757,6 +818,10 @@ a.button span.icon.bookmark {
 
 .button-container a.button.primary strong {
   font-weight: 500;
+}
+
+.button-container a.button.primary span.icon > svg * {
+  fill: var(--neutral-white);
 }
 
 /* Secondary Button */

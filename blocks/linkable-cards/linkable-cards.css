@@ -1,74 +1,52 @@
-.section[data-theme='purple'] {
-  --theme-text-primary: var(--neutral-white);
-  --theme-text-secondary: var(--neutral-white);
-  --theme-background-color: var(--purple-120);
-  --theme-card-background-color: var(--purple-140);
-  --theme-icon-01: var(--neutral-white);
-  --theme-link-01: var(--neutral-white);
-}
-
-.section[data-theme='carbon'] {
-  --theme-text-primary: #FFFFFF;
-  --theme-text-secondary: #FFFFFF;
-  --theme-background-color: #20201F;
-  --theme-card-background-color: #454544;
-  --theme-icon-01: #FFFFFF;
-  --theme-link-01: #FFFFFF;
-}
-
-.section[data-theme='neutral-bone'] {
-  --theme-text-primary: #20201F;
-  --theme-text-secondary: #20201F;
-  --theme-background-color: #FAF8F6;
-  --theme-card-background-color: #FFFFFF;
-  --theme-icon-01: #9900FF;
-  --theme-link-01: #9900FF;
-}
-
-.section[data-theme='white'] {
-  --theme-text-primary: #20201F;
-  --theme-text-secondary: #20201F;
-  --theme-background-color: #FFFFFF;
-  --theme-card-background-color: #FAF8F6;
-  --theme-icon-01: #9900FF;
-  --theme-link-01: #9900FF;
-}
-
-.section[data-theme] {
-  color: var(--theme-text-primary);
-  background-color: var(--theme-background-color);
-}
-
 /* Section - Linkable cards */
-main .section.linkable-cards-container {
-  padding-bottom: 60px;
-}
-
 main .section > .linkable-cards-wrapper {
-  padding-bottom: var(--spacer-layout-07);
+  padding-bottom: var(--spacer-layout-06);
 }
 
-.section[data-theme] .linkable-cards .card {
+/* Section Theme - Linkable cards */
+.section[data-theme] .linkable-cards .card a {
+  color: var(--theme-text-primary);
   background-color: var(--theme-card-background-color);
 }
 
-.section[data-theme] .linkable-cards .card a {
-  color: var(--theme-text-primary);
+.section[data-theme] .linkable-cards .card span.icon {
+  border-color: var(--theme-button-border);
+  background-image: var(--theme-button-bg);
+}
+
+.section[data-theme] .linkable-cards .card a:hover span.icon {
+  background-image: var(--theme-button-bg-hover);
+}
+
+.section[data-theme] .linkable-cards .card span.icon svg * {
+  stroke: var(--theme-icon-01);
+}
+
+.section[data-theme] .linkable-cards .card span.icon-play-button svg * {
+  fill: var(--theme-icon-01);
+}
+
+.section[data-theme] .linkable-cards .card a:hover span.icon svg * {
+  stroke: var(--theme-button-hover);
+}
+
+.section[data-theme] .linkable-cards .card a:hover span.icon-play-button svg * {
+  fill: var(--theme-button-hover);
 }
 
 /* Block - Linkable cards */
 .linkable-cards {
-  overflow: auto;
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
   gap: var(--spacer-element-07);
+  padding: 0 var(--spacer-element-02) var(--spacer-element-03) 0 !important;
 }
 
 .linkable-cards .card {
   position: relative;
   flex: 1;
-  background: var(--neutral-bone);
   border-radius: 10px;
   min-height: 435px;
   min-width: 255px;
@@ -77,16 +55,23 @@ main .section > .linkable-cards-wrapper {
 }
 
 .linkable-cards .card a {
+  position: relative;
   display: block;
+  background: var(--neutral-bone);
   text-decoration: none;
   border-radius: 10px;
   padding: var(--spacer-element-10) var(--spacer-element-07);
   height: 100%;
+  transition: all .3s ease-in;
 }
 
 .linkable-cards .card a:hover {
-  transition: all .2s ease-out;
-  box-shadow: 2px 4px 4px 2px rgb(0 0 0 / 15%);
+  box-shadow: var(--spacer-element-01) var(--spacer-element-02) var(--spacer-element-02) var(--spacer-element-01) rgb(0 0 0 / 15%);
+}
+
+.linkable-cards .card a:hover span.icon {
+  border-color: transparent;
+  background-position: 100% 0;
 }
 
 .linkable-cards .card a > p:first-of-type {
@@ -98,22 +83,63 @@ main .section > .linkable-cards-wrapper {
   margin: 0;
 }
 
-.linkable-cards .card a > h3 {
+.linkable-cards .card h3 {
   margin: var(--spacer-element-06) 0 var(--spacer-element-07);
 }
 
-.linkable-cards .card a > p:last-of-type {
+.linkable-cards .card p:last-of-type {
   font-size: var(--font-size-16);
   margin: var(--spacer-layout-05) 0 var(--spacer-layout-02) 0;
 }
 
+.linkable-cards .card span.icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: var(--spacer-element-07);
+  right: var(--spacer-element-07);
+  width: 54px;
+  height: 54px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-purple);
+  border-radius: 50%;
+  background-image: var(--gradient-to-right-white);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: all .3s ease-in;
+}
+
+.linkable-cards .card span.icon svg * {
+  stroke: var(--primary-purple);
+}
+
+.linkable-cards .card span.icon-play-button svg * {
+  fill: var(--primary-purple);
+  stroke: transparent;
+}
+
+/* Tablet */
 @media (min-width: 768px) {
-  .linkable-cards > .linkable-cards__item {
+  .linkable-cards > .card {
+    flex: 0 0 45%;
     width: 100%;
     max-width: 360px;
     min-height: 445px;
   }
 }
-@media (min-width: 1200px) {
 
+/* Desktop */
+@media (min-width: 1200px) {
+  /* Section - Linkable cards */
+  main .section > .linkable-cards-wrapper {
+    padding-bottom: var(--spacer-layout-07);
+  }
+
+  /* Block - Linkable cards */
+  .linkable-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
