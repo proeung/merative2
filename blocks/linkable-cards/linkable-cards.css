@@ -10,6 +10,93 @@ main .section > .linkable-cards-wrapper:last-child {
   margin: 0 0 0 var(--spacer-element-07);
 }
 
+/* Block - Linkable cards */
+.linkable-cards {
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacer-element-07);
+  padding: 0 var(--spacer-element-10) var(--spacer-element-03) 0 !important;
+}
+
+.linkable-cards .card {
+  position: relative;
+  flex: 1;
+  border-radius: 10px;
+  min-height: 435px;
+  min-width: 255px;
+  max-width: 255px;
+  margin: 0;
+}
+
+.linkable-cards .card p:first-of-type {
+  font-family: var(--sans-serif-font-medium);
+  font-size: var(--font-size-14);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-02-em);
+  line-height: var(--line-height-120);
+  margin: 0;
+}
+
+.linkable-cards .card p:last-of-type {
+  font-size: var(--font-size-16);
+  padding-bottom: calc(54px + 24px);
+  margin: var(--spacer-layout-05) 0 0;
+}
+
+.linkable-cards .card h3 {
+  margin: var(--spacer-element-06) 0 var(--spacer-element-07);
+}
+
+.linkable-cards .card span.icon {
+  position: absolute;
+  bottom: var(--spacer-element-07);
+  right: var(--spacer-element-07);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-purple);
+  border-radius: 50%;
+  background-image: var(--gradient-to-right-white);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: all .3s ease-in;
+}
+
+.linkable-cards .card span.icon svg * {
+  stroke: var(--primary-purple);
+}
+
+.linkable-cards .card span.icon-play-button svg * {
+  fill: var(--primary-purple);
+  stroke: transparent;
+}
+
+.linkable-cards .card a {
+  position: relative;
+  display: block;
+  background: var(--neutral-bone);
+  text-decoration: none;
+  border-radius: 10px;
+  padding: var(--spacer-element-10) var(--spacer-element-07) var(--spacer-element-07) var(--spacer-element-07);
+  height: 100%;
+  transition: all .3s ease-in;
+}
+
+.linkable-cards .card a:hover {
+  box-shadow: var(--spacer-element-01) var(--spacer-element-02) var(--spacer-element-02) var(--spacer-element-01) rgb(0 0 0 / 15%);
+}
+
+.linkable-cards .card a:hover span.icon {
+  border-color: transparent;
+  background-position: 100% 0;
+}
+
 /* Section Theme - Linkable cards */
 .section[data-theme] .linkable-cards .card a {
   color: var(--theme-text-primary);
@@ -42,93 +129,6 @@ main .section > .linkable-cards-wrapper:last-child {
   fill: var(--theme-button-hover);
 }
 
-/* Block - Linkable cards */
-.linkable-cards {
-  overflow-y: hidden;
-  overflow-x: auto;
-  display: flex;
-  flex-direction: row;
-  gap: var(--spacer-element-07);
-  padding: 0 var(--spacer-element-10) var(--spacer-element-03) 0;
-}
-
-.linkable-cards .card {
-  position: relative;
-  flex: 1;
-  border-radius: 10px;
-  min-height: 435px;
-  min-width: 255px;
-  max-width: 255px;
-  margin: 0;
-}
-
-.linkable-cards .card a {
-  position: relative;
-  display: block;
-  background: var(--neutral-bone);
-  text-decoration: none;
-  border-radius: 10px;
-  padding: var(--spacer-element-10) var(--spacer-element-07) var(--spacer-element-07) var(--spacer-element-07);
-  height: 100%;
-  transition: all .3s ease-in;
-}
-
-.linkable-cards .card a:hover {
-  box-shadow: var(--spacer-element-01) var(--spacer-element-02) var(--spacer-element-02) var(--spacer-element-01) rgb(0 0 0 / 15%);
-}
-
-.linkable-cards .card a:hover span.icon {
-  border-color: transparent;
-  background-position: 100% 0;
-}
-
-.linkable-cards .card a > p:first-of-type {
-  font-family: var(--sans-serif-font-medium);
-  font-size: var(--font-size-14);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-02-em);
-  line-height: var(--line-height-120);
-  margin: 0;
-}
-
-.linkable-cards .card h3 {
-  margin: var(--spacer-element-06) 0 var(--spacer-element-07);
-}
-
-.linkable-cards .card p:last-of-type {
-  font-size: var(--font-size-16);
-  padding-bottom: calc(54px + 24px);
-  margin: var(--spacer-layout-05) 0 0;
-}
-
-.linkable-cards .card span.icon {
-  position: absolute;
-  bottom: var(--spacer-element-07);
-  right: var(--spacer-element-07);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 54px;
-  height: 54px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--primary-purple);
-  border-radius: 50%;
-  background-image: var(--gradient-to-right-white);
-  background-position: 0 0;
-  background-size: 200% auto;
-  transition: all .3s ease-in;
-}
-
-.linkable-cards .card span.icon svg * {
-  stroke: var(--primary-purple);
-}
-
-.linkable-cards .card span.icon-play-button svg * {
-  fill: var(--primary-purple);
-  stroke: transparent;
-}
-
 /* Tablet */
 @media (min-width: 768px) {
   /* Section - Linkable cards */
@@ -139,8 +139,9 @@ main .section > .linkable-cards-wrapper:last-child {
 
   /* Block - Linkable cards */
   .linkable-cards {
-    padding: 0 var(--spacer-layout-05) var(--spacer-element-03) 0;
+    padding: 0 var(--spacer-layout-05) var(--spacer-element-03) 0 !important;
   }
+  
   .linkable-cards > .card {
     flex: 0 0 45%;
     width: 100%;
@@ -162,12 +163,6 @@ main .section > .linkable-cards-wrapper:last-child {
   .linkable-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0 var(--spacer-element-02) var(--spacer-element-03) 0;
+    padding: 0 var(--spacer-element-02) var(--spacer-element-03) 0 !important;
   }
-
-  /* .linkable-cards .card span.icon {
-    position: absolute;
-    bottom: var(--spacer-element-07);
-    right: var(--spacer-element-07);
-  } */
 }

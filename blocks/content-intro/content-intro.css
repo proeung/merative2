@@ -3,11 +3,6 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   padding: var(--spacer-layout-06) 0;
 }
 
-.section[data-theme] .content-intro ul li {
-  color: var(--theme-text-primary);
-  background-color: var(--theme-card-background-color);
-}
-
 /* Block - Content Intro */
 .content-intro {
   margin-bottom: var(--spacer-layout-04);
@@ -89,6 +84,12 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   position: relative;
   vertical-align: middle;
   margin-right: var(--spacer-element-05);
+}
+
+/* Theme - Content Intro */
+.section[data-theme] .content-intro ul li {
+  color: var(--theme-text-primary);
+  background-color: var(--theme-card-background-color);
 }
 
 /* Tablet */

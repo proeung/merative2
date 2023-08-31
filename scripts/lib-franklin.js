@@ -270,10 +270,8 @@ export function decorateSections(main) {
           const styles = meta.style.split(',').map((style) => toClassName(style.trim()));
           styles.forEach((style) => section.classList.add(style));
         } if (key === 'theme') {
-          section.setAttribute('data-theme', meta['theme']);
-        }
-        
-        else {
+          section.setAttribute('data-theme', meta.theme);
+        } else {
           section.dataset[toCamelCase(key)] = meta[key];
         }
       });
