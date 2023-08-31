@@ -91,6 +91,7 @@
   /* primary */
   /* stylelint-disable-next-line color-hex-length */
   --primary-purple: #9900FF;
+  --purple-60: #B66BF7;
   --purple-120: #7E00D3;
   --purple-140: #6400A6;
 
@@ -238,6 +239,21 @@
   --theme-button-bg-hover: var(--gradient-to-right-purple-140);
   --theme-button-border: var(--neutral-white);
   --theme-button-hover: var(--neutral-white);
+  --theme-border-color: var(--purple-60);
+}
+
+.section[data-theme='purple-140'] {
+  --theme-text-primary: var(--neutral-white);
+  --theme-text-secondary: var(--neutral-white);
+  --theme-background-color: var(--purple-140);
+  --theme-card-background-color: var(--purple-140);
+  --theme-icon-01: var(--neutral-white);
+  --theme-link-01: var(--neutral-white);
+  --theme-button-bg: var(--gradient-to-right-purple-140);
+  --theme-button-bg-hover: var(--gradient-to-right-purple-140);
+  --theme-button-border: var(--neutral-white);
+  --theme-button-hover: var(--neutral-white);
+  --theme-border-color: var(--purple-60);
 }
 
 .section[data-theme='carbon'] {
@@ -251,6 +267,7 @@
   --theme-button-bg-hover: var(--gradient-to-right-neutral-carbon);
   --theme-button-border: var(--neutral-160);
   --theme-button-hover: var(--neutral-white);
+  --theme-border-color: var(--neutral-grey-tint120);
 }
 
 .section[data-theme='neutral-bone'] {
@@ -264,6 +281,7 @@
   --theme-button-bg-hover: var(--gradient-to-right);
   --theme-button-border: var(--primary-purple);
   --theme-button-hover: var(--neutral-white);
+  --theme-border-color: var(--neutral-sand);
 }
 
 .section[data-theme='white'] {
@@ -277,6 +295,7 @@
   --theme-button-bg-hover: var(--gradient-to-right);
   --theme-button-border: var(--primary-purple);
   --theme-button-hover: var(--neutral-white);
+  --theme-border-color: var(--neutral-sand);
 }
 
 .section[data-theme] {

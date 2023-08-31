@@ -1,34 +1,36 @@
-/* Accordion */
-.accordion-container > .default-content-wrapper h3,
-.accordion-container > .default-content-wrapper p {
+/* Section - Linkable cards */
+main .section.accordion-container > .accordion-wrapper,
+main .section.accordion-container > .accordion-wrapper:last-child {
+  padding-top: 0;
+  padding-bottom: var(--spacer-layout-06);
+}
+
+main .section.accordion-container > .default-content-wrapper h3,
+main .section.accordion-container > .default-content-wrapper p {
   max-width: var(--text-max-container);
   margin: 0;
 }
 
-.accordion-container > .default-content-wrapper h3 {
+main .section.accordion-container > .default-content-wrapper h3 {
   font-size: var(--font-size-32);
   font-family: var(--serif-font);
   font-style: normal;
   font-weight: 300;
 }
 
-.accordion-container > .default-content-wrapper p {
+main .section.accordion-container > .default-content-wrapper p {
   font-size: var(--font-size-16);
   margin-top: var(--spacer-element-08);
 }
 
-.accordion-container blockquote {
+main .section.accordion-container blockquote {
   margin: 0;
 }
 
-main .section.accordion-container > div:last-child,
-.accordion-container .accordion-wrapper {
-  margin-top: var(--spacer-element-08);
-}
-
+/* Block - Accordion */
 .accordion {
   padding: 0;
-  box-sizing: border-box;
+  margin-top: var(--spacer-element-08);
 }
 
 .accordion .accordion-item {
@@ -39,10 +41,6 @@ main .section.accordion-container > div:last-child,
   font-weight: 400;
   padding: var(--spacer-element-07) 0 0;
   margin: 0 0 var(--spacer-element-07);
-}
-
-.accordion .accordion-item:first-child {
-  padding-top: 0;
 }
 
 .accordion .accordion-item::before,
@@ -60,7 +58,7 @@ main .section.accordion-container > div:last-child,
 
 .accordion .accordion-item:first-child::before {
   background-color: transparent;
-  top: calc(var(--spacer-element-07) * -1);
+  top: 0;
 }
 
 .accordion .accordion-item:last-child::after {
@@ -68,6 +66,7 @@ main .section.accordion-container > div:last-child,
   top: inherit;
 }
 
+/* stylelint-disable no-descending-specificity */
 .accordion .accordion-item p {
   margin: 0 0 var(--spacer-element-07) 0;
   font-size: var(--font-size-16);
@@ -75,6 +74,7 @@ main .section.accordion-container > div:last-child,
   line-height: var(--line-height-160);
   font-weight: 300;
 }
+/* stylelint-enable no-descending-specificity */
 
 .accordion .accordion-item-content {
   max-height: 0;
@@ -112,46 +112,27 @@ main .section.accordion-container > div:last-child,
   top: calc(50% - var(--spacer-element-03));
 }
 
-/* Theme - Purple */
-.section.accordion-purple,
-.accordion.accordion-purple {
-  color: var(--neutral-white);
-  background-color: var(--purple-140);
-}
-
-.accordion.accordion-purple .accordion-item.accordion-item-open::before {
-  height: 5px;
-  background-image: var(--gradient-left-right);
-}
-
-.accordion.accordion-purple .accordion-arrow-down {
+/* Section Theme - Linkable cards */
+.section[data-theme="purple"] .accordion .accordion-arrow-down,
+.section[data-theme="purple-140"] .accordion .accordion-arrow-down,
+.section[data-theme="carbon"] .accordion .accordion-arrow-down {
   background: url('../../icons/caret-down-white.svg') no-repeat center/contain;
 }
 
-.accordion.accordion-purple .accordion-item:last-child::after,
-.accordion.accordion-purple .accordion-item::before {
-  background-color: var(--primary-purple);
-}
-
-.accordion.accordion-purple .accordion-item:first-child::before {
-  background-color: transparent;
-}
-
-.accordion.accordion-purple .accordion-item-header,
-.accordion.accordion-purple .accordion-item-content,
-.accordion.accordion-purple {
-  background-color: var(--purple-140);
-}
-
-/* white */
-.accordion.accordion-white .accordion-item-header,
-.accordion.accordion-white .accordion-item-content
-.accordion.accordion-white {
-  background-color: var(--neutral-white);
+.section[data-theme] .accordion .accordion-item::before,
+.section[data-theme] .accordion .accordion-item:last-child::after {
+  background-color: var(--theme-border-color);
 }
 
 /** Desktop **/
 @media (min-width: 1200px) {
+  /* Section - Linkable cards */
+  main .section > .accordion-wrapper,
+  main .section > .accordion-wrapper:last-child {
+    padding-bottom: var(--spacer-layout-07);
+  }
+
+  /* Block - Accordion */
   .accordion {
     margin-right: 288px;
   }
