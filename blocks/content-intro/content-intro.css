@@ -53,12 +53,15 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   margin-bottom: 0;
 }
 
+/* Block - Content Intro Checkmark */
 .content-intro ul {
   margin: var(--spacer-layout-04) 0 0 0;
   padding-inline-start: 0;
 }
 
 .content-intro ul li {
+  display: flex;
+  align-items: center;
   position: relative;
   list-style: none;
   font-size: var(--font-size-18);
@@ -66,7 +69,8 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   line-height: 160%;
   border-radius: var(--spacer-element-09);
   width: 100%;
-  padding: var(--spacer-element-05) var(--spacer-element-07);
+  min-height: var(--spacer-layout-04);
+  padding: 0 var(--spacer-element-07);
   padding-inline-start: var(--spacer-element-07);
   margin: 0 0 var(--spacer-element-05) 0;
 }
@@ -76,16 +80,15 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
 }
 
 .content-intro ul li::before {
-  background: url('../../icons/check-bullet.svg') no-repeat;
-  border-radius: 50px;
   content: "";
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  background: url('../../icons/check-bullet.svg') no-repeat;
+  width: var(--spacer-element-07);
+  height: var(--spacer-element-07);
   list-style: none;
   position: relative;
   vertical-align: middle;
-  margin-right: 19px;
+  margin-right: var(--spacer-element-05);
 }
 
 /* Tablet */
@@ -104,6 +107,7 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
     margin: var(--spacer-element-07) 0 0;
   }
 
+  /* Block - Content Intro Checkmark */
   .content-intro ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -155,6 +159,7 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
     margin: 0 0 var(--spacer-element-08) 0;
   }
 
+  /* Block - Content Intro Checkmark */
   .content-intro ul {
     grid-template-columns: 1fr;
     column-gap: 0;
@@ -163,5 +168,10 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
 
   .content-intro ul li {
     font-size: var(--font-size-21);
+    min-height: var(--spacer-layout-05);
+  }
+
+  .content-intro ul li::before {
+    margin-right: var(--spacer-element-07);
   }
 }

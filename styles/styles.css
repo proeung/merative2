@@ -1325,13 +1325,13 @@ main pre {
 }
 
 /* Section - Content Band List */
-.section.section-content-band-list .only-picture {
+.section.section-content-band-list .default-content-wrapper .only-picture {
   justify-content: right;
   display: flex;
   margin-top: var(--spacer-element-10);
 }
 
-.section.section-content-band-list .only-picture picture {
+.section.section-content-band-list .default-content-wrapper .only-picture picture {
   width: 160px;
 }
 
@@ -1970,7 +1970,7 @@ body.quick-links main .section > div {
   }
 
   /* Section - Content Band List */
-  .section.section-content-band-list .only-picture picture {
+  .section.section-content-band-list .default-content-wrapper .only-picture picture {
     width: 312px;
   }
 
