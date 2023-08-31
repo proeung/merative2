@@ -305,7 +305,7 @@ main div.leadspace-wrapper {
 }
 
 .leadspace.video button .video-button-icon {
-  background: var(--primary-purple) url('./../../icons/play-button.svg') no-repeat 55% 50%;
+  background: var(--primary-purple) url('./../../icons/play-button-white.svg') no-repeat 55% 50%;
   border-radius: 50%;
   height: 66px;
   width: 66px;
@@ -314,7 +314,7 @@ main div.leadspace-wrapper {
 }
 
 .leadspace.video button.open-video:hover .video-button-icon {
-  background: url('./../../icons/play-button.svg') no-repeat 55% 50%, var(--gradient-left-right);
+  background: url('./../../icons/play-button-white.svg') no-repeat 55% 50%, var(--gradient-left-right);
 }
 
 /* Video control button */
@@ -366,7 +366,7 @@ main div.leadspace-wrapper {
 }
 
 .leadspace.video .video-control.play button > span {
-  background-image: url('./../../icons/play-button.svg');
+  background-image: url('./../../icons/play-button-white.svg');
   background-repeat: no-repeat;
   height: 23px;
   width: 15px;
