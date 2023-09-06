@@ -2,12 +2,10 @@ import {
   readBlockConfig,
   decorateButtons,
   decorateIcons,
-  loadBlocks,
 } from '../../scripts/lib-franklin.js';
 
 import {
   createTag,
-  decorateMain,
   fetchFragment,
 } from '../../scripts/scripts.js';
 

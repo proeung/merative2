@@ -284,10 +284,22 @@ export async function fetchFragment(path) {
 
 // Auto block to create breadcrumb for pages with `breadcrumb` metadata
 async function buildBreadcrumb() {
-  if (getMetadata('breadcrumb')) {
+  const breadcrumbMetadata = getMetadata('breadcrumb');
+  const breadcrumbImageMetadata = getMetadata('breadcrumb-image');
+
+  if (breadcrumbMetadata) {
     const main = document.querySelector('main');
-    const fragmentBlock = await fetchFragment(getMetadata('breadcrumb'));
+
+    // Fetch breadcrumb content asynchronously
+    const fragmentBlock = await fetchFragment(breadcrumbMetadata);
+
+    // Prepend breadcrumb content to the main element
     main.prepend(fragmentBlock);
+
+    // Check if `breadcrumb-image` metadata is set to 'False' and add class accordingly
+    if (breadcrumbImageMetadata && breadcrumbImageMetadata.toLowerCase() === 'false') {
+      fragmentBlock.classList.add('breadcrumb-no-image');
+    }
   }
 }
 
