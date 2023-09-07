@@ -92,20 +92,24 @@ function calculateSlideHeight(carousel, slide) {
   if (carouselType === 'default' || carouselType === 'testimonial' || carouselType === 'case-study') {
     requestAnimationFrame(() => {
       const slideBody = slide.querySelector('div');
-      const slideH3 = slide.querySelector('H3');
+      const slideH3 = slide.querySelector('h3');
       const bodyStyle = window.getComputedStyle(slideBody);
       const textOptions = {
         font: `${bodyStyle.fontWeight} ${bodyStyle.fontSize} ${bodyStyle.fontFamily}`,
       };
-      const lineCount = getLineCount(
-        slideH3.textContent,
-        parseInt(bodyStyle.width, 10),
-        textOptions,
-      );
-      const bodyHeight = parseFloat(bodyStyle.lineHeight) * lineCount;
-      const figureStyle = window.getComputedStyle(slide.querySelector('.figure'));
-      const figureHeight = (figureStyle && figureStyle.height !== 'auto') ? parseFloat(figureStyle.height) : SLIDE_CAPTION_SIZE_WITH_ICON;
-      carousel.style.height = `${bodyHeight + figureHeight}px`;
+
+      // Check if slideH3 exists before accessing its textContent
+      if (slideH3) {
+        const lineCount = getLineCount(
+          slideH3.textContent,
+          parseInt(bodyStyle.width, 10),
+          textOptions,
+        );
+        const bodyHeight = parseFloat(bodyStyle.lineHeight) * lineCount;
+        const figureStyle = window.getComputedStyle(slide.querySelector('.figure'));
+        const figureHeight = (figureStyle && figureStyle.height !== 'auto') ? parseFloat(figureStyle.height) : SLIDE_CAPTION_SIZE_WITH_ICON;
+        carousel.style.height = `${bodyHeight + figureHeight}px`;
+      }
     });
   }
 }
