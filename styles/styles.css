@@ -895,7 +895,8 @@ a.button span.icon.bookmark {
 
 /* Tertiary (Link) Button */
 .button-container > a.tertiary:not(.has-icon) {
-  display: inline-block;
+  display: inline;
+  word-break: break-word;
   border-bottom: 2px solid var(--primary-purple);
   height: 20px;
 }

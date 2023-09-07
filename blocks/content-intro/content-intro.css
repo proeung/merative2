@@ -60,7 +60,7 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   position: relative;
   list-style: none;
   font-size: var(--font-size-18);
-  font-family: var(--sans-serif-font-medium);
+  font-family: var(--sans-serif-font-regular);
   line-height: 160%;
   border-radius: var(--spacer-element-09);
   width: 100%;
@@ -141,13 +141,12 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   }
 
   .content-intro .content-intro__col-1 {
-    width: 66.66%;
+    width: 66.6666%;
     max-width: var(--text-max-container);
   }
   
   .content-intro .content-intro__col-2 {
-    width: 33.33%;
-    max-width: 360px;
+    width: var(--sidebar-max-container);
     font-size: var(--font-size-21);
   }
 

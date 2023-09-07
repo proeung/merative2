@@ -1,18 +1,19 @@
 /* Section - Linkable cards */
-main .section.accordion-container > .accordion-wrapper,
-main .section.accordion-container > .accordion-wrapper:last-child {
+main .section.accordion-container > .accordion-wrapper {
   padding-top: 0;
   padding-bottom: var(--spacer-layout-06);
 }
 
+main .section.accordion-container > .default-content-wrapper h2,
 main .section.accordion-container > .default-content-wrapper h3,
 main .section.accordion-container > .default-content-wrapper p {
   max-width: var(--text-max-container);
   margin: 0;
 }
 
+main .section.accordion-container > .default-content-wrapper h2,
 main .section.accordion-container > .default-content-wrapper h3 {
-  font-size: var(--font-size-32);
+  font-size: var(--font-size-28);
   font-family: var(--serif-font);
   font-style: normal;
   font-weight: 300;
@@ -30,7 +31,7 @@ main .section.accordion-container blockquote {
 /* Block - Accordion */
 .accordion {
   padding: 0;
-  margin-top: var(--spacer-element-08);
+  margin-top: var(--spacer-element-10);
 }
 
 .accordion .accordion-item {
@@ -39,8 +40,8 @@ main .section.accordion-container blockquote {
   letter-spacing: var(--letter-spacing-001-em);
   line-height: var(--line-height-160);
   font-weight: 400;
-  padding: var(--spacer-element-07) 0 0;
-  margin: 0 0 var(--spacer-element-07);
+  padding: var(--spacer-element-07) 0 var(--spacer-element-07) 0 !important;
+  margin: 0;
 }
 
 .accordion .accordion-item::before,
@@ -56,13 +57,13 @@ main .section.accordion-container blockquote {
   transition: all .5s ease-out;
 }
 
-.accordion .accordion-item:first-child::before {
+.accordion .accordion-item::before {
   background-color: transparent;
   top: 0;
 }
 
 .accordion .accordion-item:last-child::after {
-  bottom: calc(var(--spacer-element-07) * -1);
+  bottom: 0;
   top: inherit;
 }
 
@@ -127,9 +128,13 @@ main .section.accordion-container blockquote {
 /** Desktop **/
 @media (min-width: 1200px) {
   /* Section - Linkable cards */
-  main .section > .accordion-wrapper,
-  main .section > .accordion-wrapper:last-child {
+  main .section.accordion-container > .accordion-wrapper {
     padding-bottom: var(--spacer-layout-07);
+  }
+
+  main .section.accordion-container > .default-content-wrapper h2,
+  main .section.accordion-container > .default-content-wrapper h3 {
+    font-size: var(--font-size-32);
   }
 
   /* Block - Accordion */
