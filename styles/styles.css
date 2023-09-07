@@ -144,21 +144,19 @@
   --sans-serif-font-semibold: "Alliance No.1 Semibold", "Alliance No.1 Semibold Fallback";
 
   /* font sizes */
-  --font-size-128: 128px;
-  --font-size-96: 96px;
-  --font-size-64: 64px;
-  --font-size-45: 45px;
-  --font-size-36: 36px;
-  --font-size-32: 32px;
-  --font-size-28: 28px;
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-21: 21px;
   --font-size-22: 22px;
   --font-size-24: 24px;
-  --font-size-21: 21px;
-  --font-size-18: 18px;
-  --font-size-16: 16px;
-  --font-size-14: 14px;
-  --font-size-12: 12px;
-  --font-size-11: 11px;
+  --font-size-28: 28px;
+  --font-size-32: 32px;
+  --font-size-36: 36px;
+  --font-size-45: 45px;
+  --font-size-64: 64px;
   --font-size-96: 96px;
   --font-size-128: 128px;
 
