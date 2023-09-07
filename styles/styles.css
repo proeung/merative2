@@ -892,7 +892,7 @@ a.button span.icon.bookmark {
   color: var(--neutral-white);
   background-image: var(--gradient-to-right);
   background-position: 96% 0;
-  }
+}
 
 /* Tertiary (Link) Button */
 .button-container > a.tertiary:not(.has-icon) {
@@ -946,6 +946,11 @@ a.button span.icon.bookmark {
 .button-container a.button.secondary:hover span.icon svg *,
 .button-container a.button.secondary:active span.icon svg * {
   stroke: var(--neutral-white);
+}
+
+.button-container a.button.secondary:hover span.icon.video svg *,
+.button-container a.button.secondary:active span.icon.video svg * {
+  fill: var(--neutral-white);
 }
 
 /* Paragraph link styles */
