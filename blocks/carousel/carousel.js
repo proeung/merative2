@@ -391,7 +391,6 @@ export default function decorate(block) {
   // add decorated carousel to block
   block.append(carousel);
 
-
   calculateSlideHeight(carousel, slides[0]);
 
   // add nav buttons and dots to block
