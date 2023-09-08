@@ -89,6 +89,7 @@
 }
 
 /* Section - Video */
+/* stylelint-disable no-descending-specificity */
 main .section.video-promo-wrapper > div:last-child {
   padding-bottom: unset;
 }
@@ -101,6 +102,7 @@ main .section.video-promo-wrapper > div.video-wrapper {
   max-width: 1440px;
   width: 100%;
 }
+/* stylelint-enable no-descending-specificity */
 
 /* Section Theme - Video */
 .section.video-container[data-theme] .video-text a {
