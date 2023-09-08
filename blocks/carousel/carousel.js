@@ -297,7 +297,7 @@ function startAutoScroll(block) {
   if (!scrollInterval) {
     scrollInterval = setInterval(() => {
       scrollToSlide(block, curSlide < maxSlide ? curSlide + 1 : 0);
-    }, 8000);
+    }, 10000);
   }
 }
 
@@ -391,10 +391,8 @@ export default function decorate(block) {
   // add decorated carousel to block
   block.append(carousel);
 
-  // calculate height of first slide
-  if (carouselType !== 'case-study') {
-    calculateSlideHeight(carousel, slides[0]);
-  }
+
+  calculateSlideHeight(carousel, slides[0]);
 
   // add nav buttons and dots to block
   if (slides.length > 1) {
