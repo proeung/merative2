@@ -15,6 +15,7 @@ main .section.breadcrumb-container > div:first-child > *:first-child > *:first-c
 }
 
 .breadcrumb .breadcrumb__inner {
+  overflow-x: hidden;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
@@ -72,6 +73,14 @@ main .section.breadcrumb-container > div:first-child > *:first-child > *:first-c
   height: var(--spacer-element-05);
   line-height: 0;
   top: -1px;
+}
+
+.breadcrumb .breadcrumb__col ul li.breadcrumb__ellipsis::before {
+  content: "...";
+}
+
+.breadcrumb .breadcrumb__col ul li.breadcrumb__ellipsis span {
+  display: none;
 }
 
 .breadcrumb .breadcrumb__col .icon {
