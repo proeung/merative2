@@ -36,7 +36,6 @@ const SLIDE_CAPTION_SIZE_WITH_ICON = 89;
 const SLIDE_ID_PREFIX = 'carousel-slide';
 const SLIDE_CONTROL_ID_PREFIX = 'carousel-slide-control';
 
-let resizeTimeout;
 let scrollInterval;
 let curSlide = 0;
 let maxSlide = 0;
