@@ -108,12 +108,15 @@ main .section.video-promo-wrapper > div.video-wrapper {
 .section.video-container[data-theme] .video-text a {
   color: var(--theme-link-01);
   border-color: var(--theme-link-01);
+  transition: all .3s ease-in;
 }
 
 .section.video-container[data-theme] .video-text a:hover,
 .section.video-container[data-theme] .video-text a:visited {
   -webkit-text-fill-color: unset;
   border-image-source: none;
+  background: none;
+  opacity: .75;
 }
 
 /* Tablet */

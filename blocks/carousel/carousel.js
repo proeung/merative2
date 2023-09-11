@@ -432,9 +432,10 @@ export default function decorate(block) {
     });
   }
 
-  window.addEventListener('resize', () => {
-    // clear the timeout
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => calculateSlideHeight(carousel, slides[curSlide]), 500);
+  // Observe the carousel container for resize events
+  const carouselContainer = block.querySelector('.carousel-slide-container');
+  const resizeObserver = new ResizeObserver(() => {
+    calculateSlideHeight(carouselContainer, carouselContainer.children[curSlide]);
   });
+  resizeObserver.observe(carouselContainer);
 }
