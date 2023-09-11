@@ -229,7 +229,7 @@
   --box-shadow-large: 0 var(--spacer-element-02) var(--spacer-element-06) 0 rgb(185 181 174 / 40%);
 }
 
-/* Theme */
+/* Theme - Global */
 .section[data-theme='purple'] {
   --theme-text-primary: var(--neutral-white);
   --theme-text-secondary: var(--neutral-white);
@@ -1608,8 +1608,8 @@ body.quick-links main .section > div {
   height: var(--gap-84);
   background-color: var(--neutral-bone);
   background-repeat: repeat-x; 
-  background-size: auto 100%;
-  background-position: bottom left;
+  background-size: 400px auto;
+  background-position: calc(var(--spacer-element-04) * -1) 0;
 }
 
 .section.section-pattern[data-theme] {

@@ -19,28 +19,28 @@
   letter-spacing: var(--letter-spacing-1);
   padding: var(--spacer-element-04) var(--spacer-element-07);
   border-radius: 40px;
-  color: var(--primary-purple);
+  color: var(--neutral-carbon);
   border-width: 2px;
   border-color: var(--primary-purple);
   border-style: solid;
   background-color: transparent;
-  transition: all .25s ease-in;
+  transition: all .2s ease-in;
 }
 
 .quick-links-buttons .quick-links-buttons__item a:hover {
-  color: var(--neutral-white) !important;
-  background-color: var(--primary-purple);
+  background-color: var(--neutral-white);
 }
 
 /* Themes - Quick Links Buttons */
 .section[data-theme] .quick-links-buttons .quick-links-buttons__item a {
   background-color: var(--theme-button-bg);
   border-color: var(--theme-button-border);
-  color: var(--theme-link-01);
+  color: var(--neutral-carbon);
 }
 
-.section[data-theme] .quick-links-buttons .quick-links-buttons__item a:hover {
-  background-color: var(--theme-button-bg-hover);
+.section[data-theme] .quick-links-buttons .quick-links-buttons__item a:hover,
+.section[data-theme] .quick-links-buttons .quick-links-buttons__item a:focus {
+  background-color: var(--neutral-white);
 }
 
 /* Tablet */
