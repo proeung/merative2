@@ -671,7 +671,7 @@ export function createHeadshotList(row, styles) {
   // Socials
   const socialLinks = [];
 
-  if (row.twitter) {
+  if (row.twitter && row.twitter !== '0') {
     socialLinks.push({
       href: row.twitter,
       label: 'Open Twitter',
@@ -679,7 +679,7 @@ export function createHeadshotList(row, styles) {
     });
   }
 
-  if (row.linkedin) {
+  if (row.linkedin && row.linkedin !== '0') {
     socialLinks.push({
       href: row.linkedin,
       label: 'Open LinkedIn',
