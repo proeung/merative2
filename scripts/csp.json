@@ -89,8 +89,7 @@
     "*.bing.com",
     "*.clarity.ms",
     "px.ads.linkedin.com",
-    "googleads.g.doubleclick.net",
-    "*.doubleclick.net"
+    "googleads.g.doubleclick.net"
   ],
   "frame-src": [
     "'self'",
@@ -104,7 +103,8 @@
     "merative.demdex.net",
     "*.medallia.com",
     "*.kampyle.com",
-    "js.driftt.com"
+    "js.driftt.com",
+    "*.doubleclick.net"
   ],
   "style-src": [
     "'self'",
