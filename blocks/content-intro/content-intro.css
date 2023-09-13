@@ -208,6 +208,7 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   .content-intro-stat .content-intro .content-intro__col-2 p {
     padding-inline-end: var(--spacer-layout-05);
   }
+  
   .content-intro-stat .content-intro .content-intro__col-2 h2 {
     font-size: var(--font-size-128);
   }
