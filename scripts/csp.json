@@ -37,7 +37,8 @@
       "embed.podcasts.apple.com",
       "bat.bing.com",
       "https://www.clarity.ms",
-      "*.licdn.com"
+      "*.licdn.com",
+      "*.googlesyndication.com"
   ],
   "connect-src": [
       "'self'",
@@ -64,7 +65,8 @@
       "https://*.hotjar.io",
       "wss://*.hotjar.com",
       "*.clarity.ms",
-      "cdn.linkedin.oribi.io"
+      "cdn.linkedin.oribi.io",
+      "*.googlesyndication.com"
   ],
   "img-src": [
     "'self'",
@@ -87,7 +89,8 @@
     "*.bing.com",
     "*.clarity.ms",
     "px.ads.linkedin.com",
-    "googleads.g.doubleclick.net"
+    "googleads.g.doubleclick.net",
+    "*.doubleclick.net"
   ],
   "frame-src": [
     "'self'",
