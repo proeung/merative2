@@ -26,10 +26,6 @@
   clip-path: circle(100% at 100% 100%);
 }
 
-.leadspace.half-circle:not(.no-clip) > div > div:nth-child(2) picture {
-  clip-path: inset(50% 0 0 0 round 50% 50% 0 0);
-}
-
 .leadspace h1 {
   font-family: var(--serif-font);
   line-height: var(--line-height-120);
@@ -187,13 +183,8 @@ main div.leadspace-wrapper {
   object-fit: cover;
 }
 
-.leadspace.half-circle:not(.no-clip) > div > div:nth-child(2) img,
 .leadspace.quarter-circle:not(.no-clip) > div > div:nth-child(2) img {
   aspect-ratio: 1 / 1;
-}
-
-.leadspace.half-circle:not(.no-clip) > div > div:nth-child(2) img {
-  transform: translateY(50%);
 }
 
 /* Groups */
