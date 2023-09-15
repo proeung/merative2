@@ -89,12 +89,15 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
 /* Block - Content Intro: Stat Number */
 .content-intro-stat .content-intro .content-intro__col-2 {
   position: relative;
-  margin: var(--spacer-element-09) 0 0 var(--spacer-layout-05);
+  margin: var(--spacer-element-10) 0 0 calc(42px + var(--spacer-element-05));
+  padding-inline-end: calc(42px + var(--spacer-element-05));
 }
 
 .content-intro-stat .content-intro .content-intro__col-2::before {
   content: "";
   display: block;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 1px;
   background-image: var(--gradient-vertical);
@@ -158,6 +161,7 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   .content-intro-stat .content-intro .content-intro__col-2 {
     max-width: var(--sidebar-max-container);
     margin-left: auto;
+    padding-inline-end: 0;
   }
 }
 
