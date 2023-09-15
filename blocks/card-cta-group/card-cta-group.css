@@ -1,0 +1,71 @@
+/* Block - Card CTA Group */
+.card-cta-group {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--spacer-element-07);
+}
+
+.card-cta-group .card-cta-group__item div:last-child {
+  display: none;
+}
+
+.card-cta-group .card-cta-group__item a {
+  display: block;
+  width: 100%;
+  min-height: var(--spacer-layout-06);
+  padding: var(--spacer-element-08);
+  font-size: var(--font-size-21);
+  font-family: var(--sans-serif-font-medium);
+  font-weight: 500;
+  line-height: 160%;
+  text-decoration: none;
+  color: var(--neutral-carbon);
+  border-radius: calc(var(--spacer-element-01) + var(--spacer-element-03));
+  border: var(--spacer-element-01) solid var(--neutral-sand);
+  transition: all .3s ease-in-out;
+}
+
+.card-cta-group .card-cta-group__item a span {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+
+.card-cta-group .card-cta-group__item a svg {
+  width: auto;
+  height: var(--spacer-element-08);
+}
+
+.card-cta-group.align-center .card-cta-group__item a {
+  text-align: center;
+}
+
+.card-cta-group .card-cta-group__item a:focus,
+.card-cta-group .card-cta-group__item a:hover {
+  border-color: transparent;
+  box-shadow: var(--box-shadow-small);
+}
+
+.card-cta-group .card-cta-group__item a:focus {
+  border-color: var(--neutral-carbon);
+}
+
+/* Themes - Card CTA Group */
+
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  /* Block - Card CTA Group */
+  .card-cta-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1200px) {
+  /* Block - Card CTA Group */
+  .card-cta-group {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
