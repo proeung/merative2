@@ -13,6 +13,8 @@ export default function decorate(block) {
     const lastColumn = element.querySelectorAll('div:last-child');
     const themeClass = toClassName(lastColumn[0].innerText);
 
-    element.setAttribute('data-theme', themeClass);
+    if (themeClass) {
+      element.setAttribute('data-theme', themeClass);
+    }
   });
 }
