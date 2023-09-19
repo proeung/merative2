@@ -96,7 +96,7 @@
   --purple-20: #EBCCFF;
   --purple-60: #B66BF7;
   --purple-120: #7E00D3;
-  --purple-100: #9900FF;
+  --purple-100: var(--primary-purple);
   --purple-140: #6400A6;
 
   /* Brand - Micromedex */
