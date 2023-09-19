@@ -1,0 +1,20 @@
+/* Section - Content Body */
+.section.content-body-container .content-body,
+.section.content-body-container .divider {
+  width: 840px;
+}
+
+.content-body h4 {
+  font-size: var(--font-size-16);
+  line-height: 160%;
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Desktop */
+@media only screen and (min-width: 1200px) {
+
+}
