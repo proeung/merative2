@@ -177,12 +177,21 @@ main div.leadspace-wrapper {
   width: 235px;
 }
 
-.leadspace.half-circle > div > div:nth-child(2) img,
 .leadspace.quarter-circle > div > div:nth-child(2) img {
   width: 328px;
   object-fit: cover;
 }
 
+/* Leadspace - Half Circle */
+.leadspace.half-circle > div > div:nth-child(2) picture {
+  margin: var(--spacer-element-10) auto 0 auto;
+}
+
+.leadspace.half-circle > div > div:nth-child(2) img {
+  width: 100%;
+}
+
+/* Leadspace - Quarter Circle */
 .leadspace.quarter-circle:not(.no-clip) > div > div:nth-child(2) img {
   aspect-ratio: 1 / 1;
 }
@@ -429,7 +438,6 @@ main div.leadspace-wrapper {
     display: inline-block;
   }
 
-  .leadspace.half-circle > div > div:nth-child(2) img,
   .leadspace.quarter-circle > div > div:nth-child(2) img {
     width: 336px;
   }
@@ -593,17 +601,12 @@ main div.leadspace-wrapper {
     width: 235px;
   }
 
-  .leadspace.half-circle > div > div:nth-child(2) img,
   .leadspace.quarter-circle > div > div:nth-child(2) img {
     width: 552px;
   }
 
   .leadspace > div:first-child > div:nth-child(2) picture {
     margin-top: var(--spacer-element-10);
-  }
-
-  .leadspace.half-circle > div:first-child > div:nth-child(2) picture {
-    margin-top: var(--spacer-layout-06);
   }
 
   .leadspace.video > div:first-child > div:nth-child(2) {
