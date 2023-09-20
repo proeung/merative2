@@ -609,6 +609,12 @@ main div.leadspace-wrapper {
     margin-top: var(--spacer-element-10);
   }
 
+  /* Leadspace - Half Circle */
+  .leadspace.half-circle > div > div:nth-child(2) picture {
+    margin-top: var(--spacer-layout-06);
+  }
+  
+  /* Leadspace - Video */
   .leadspace.video > div:first-child > div:nth-child(2) {
     width: 45%;
     height: 888px;
