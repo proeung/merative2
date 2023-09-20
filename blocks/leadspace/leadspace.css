@@ -22,10 +22,6 @@
   margin-top: 24px;
 }
 
-.leadspace.quarter-circle:not(.no-clip) > div > div:nth-child(2) picture {
-  clip-path: circle(100% at 100% 100%);
-}
-
 .leadspace h1 {
   font-family: var(--serif-font);
   line-height: var(--line-height-120);
@@ -169,10 +165,6 @@ main div.leadspace-wrapper {
   width: 320px;
 }
 
-.leadspace.event > div:first-child > div:nth-child(2) picture {
-  display: none;
-}
-
 .leadspace > div > div:nth-child(1) img {
   width: 235px;
 }
@@ -187,6 +179,10 @@ main div.leadspace-wrapper {
   margin: var(--spacer-element-10) auto 0 auto;
 }
 
+.leadspace.event > div:first-child > div:nth-child(2) picture {
+  display: none;
+}
+
 .leadspace.half-circle > div > div:nth-child(2) img {
   width: 100%;
 }
@@ -194,6 +190,10 @@ main div.leadspace-wrapper {
 /* Leadspace - Quarter Circle */
 .leadspace.quarter-circle:not(.no-clip) > div > div:nth-child(2) img {
   aspect-ratio: 1 / 1;
+}
+
+.leadspace.quarter-circle:not(.no-clip) > div > div:nth-child(2) picture {
+  clip-path: circle(100% at 100% 100%);
 }
 
 /* Groups */
