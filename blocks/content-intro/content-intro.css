@@ -1,6 +1,12 @@
 /* Section - Content Intro */
 main .section.content-intro-container > .content-intro-wrapper {
-  padding: var(--spacer-layout-06) 0;
+  padding-top: var(--spacer-layout-06);
+  padding-bottom: var(--spacer-layout-06);
+}
+
+/* Section - Content Intro with Linkable Cards */
+main .section.content-intro-container.linkable-cards-container > .content-intro-wrapper {
+  padding-bottom: var(--spacer-layout-04);
 }
 
 /* Block - Content Intro */
@@ -169,11 +175,14 @@ main .section.content-intro-container > .content-intro-wrapper {
 @media only screen and (min-width: 1200px) {
   /* Section - Content Intro */
   main .section.content-intro-container > .content-intro-wrapper {
-    padding: var(--spacer-layout-07) 0;
+    padding-top: var(--spacer-layout-07);
+    padding-bottom: var(--spacer-layout-07);
   }
 
+  /* Section - Content Intro with Columns */
   main .section.content-intro-container.columns-container > .content-intro-wrapper {
-    padding: var(--spacer-layout-07) 0 var(--spacer-layout-06) 0;
+    padding-top: var(--spacer-layout-07);
+    padding-bottom: var(--spacer-layout-06);
   }
 
   /* Block - Content Intro */
