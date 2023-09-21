@@ -1,13 +1,9 @@
-/* Section - Content Intro Checkmark */
-main .section.content-intro-checkmark > .content-intro-wrapper {
+/* Section - Content Intro */
+main .section.content-intro-container > .content-intro-wrapper {
   padding: var(--spacer-layout-06) 0;
 }
 
 /* Block - Content Intro */
-.content-intro {
-  margin-bottom: var(--spacer-layout-04);
-}
-
 .content-intro .content-intro__inner h2 {
   margin: 0;
 }
@@ -50,6 +46,10 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
 
 /* Block - Content Intro: Checkmark */
 .content-intro ul {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--gap-24);
+  width: 100%;
   margin: var(--spacer-layout-04) 0 0 0;
   padding-inline-start: 0;
 }
@@ -65,9 +65,9 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   border-radius: var(--spacer-element-09);
   width: 100%;
   min-height: var(--spacer-layout-04);
-  padding: 0 var(--spacer-element-07);
+  padding: var(--spacer-element-05) var(--spacer-element-07);
   padding-inline-start: var(--spacer-element-07);
-  margin: 0 0 var(--spacer-element-05) 0;
+  margin: 0;
 }
 
 .content-intro ul li:last-of-type {
@@ -84,6 +84,7 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
   position: relative;
   vertical-align: middle;
   margin-right: var(--spacer-element-05);
+  flex-shrink: 0;
 }
 
 /* Block - Content Intro: Stat Number */
@@ -141,13 +142,12 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
 
   /* Block - Content Intro: Checkmark */
   .content-intro ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: var(--gap-24);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .content-intro ul li {
     max-width: inherit;
+    height: 100%;
   }
 
   /* Block - Content Intro: Stat Number */
@@ -168,8 +168,12 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
 /* Desktop */
 @media only screen and (min-width: 1200px) {
   /* Section - Content Intro */
-  main .section.content-intro-checkmark > .content-intro-wrapper {
+  main .section.content-intro-container > .content-intro-wrapper {
     padding: var(--spacer-layout-07) 0;
+  }
+
+  main .section.content-intro-container.columns-container > .content-intro-wrapper {
+    padding: var(--spacer-layout-07) 0 var(--spacer-layout-06) 0;
   }
 
   /* Block - Content Intro */
@@ -206,8 +210,7 @@ main .section.content-intro-checkmark > .content-intro-wrapper {
 
   /* Block - Content Intro: Checkmark */
   .content-intro ul {
-    grid-template-columns: 1fr;
-    column-gap: 0;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     margin-top: 0;
   }
 
