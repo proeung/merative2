@@ -1,7 +1,7 @@
 /* Section - Content Text Body */
 .section.content-text-body-container .content-text-body,
 .section.content-text-body-container .divider {
-  width: 840px;
+  max-width: 840px;
 }
 
 .section.content-text-body-container > div,

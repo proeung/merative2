@@ -98,7 +98,7 @@ main .section.short-cards-container.section-full-width > .short-cards-wrapper:la
 }
 
 .short-cards.with-graphic .short-cards__item a span.icon svg {
-  width: auto;
+  width: calc(var(--spacer-layout-02) + var(--spacer-layout-06));
   height: 100%;
 }
 
@@ -128,6 +128,12 @@ main .section.short-cards-container.section-full-width > .short-cards-wrapper:la
 
 /* Tablet */
 @media only screen and (min-width: 768px) {
+  /* Section - Short Cards */
+  main .section.short-cards-container.section-full-width > .short-cards-wrapper,
+  main .section.short-cards-container.section-full-width > .short-cards-wrapper:last-child {
+    margin: 0 0 0 var(--spacer-layout-036);
+  }
+
   /* Block - Short Cards */
   .short-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -140,6 +146,7 @@ main .section.short-cards-container.section-full-width > .short-cards-wrapper:la
   /* Block - Short Cards: with Graphic */
   .short-cards.with-graphic {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 var(--spacer-layout-05) var(--spacer-element-03) 0 !important;
   }
 
   .short-cards.with-graphic .short-cards__item a span.icon {
