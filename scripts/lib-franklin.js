@@ -821,6 +821,18 @@ export function loadHeader(header) {
 }
 
 /**
+ * loads a block named 'solution-header' into header
+ */
+
+export function loadSolutionHeader(header) {
+  const solutionHeaderBlock = document.querySelector('.solution-header-wrapper');
+  header.append(solutionHeaderBlock);
+  document.querySelector('body').classList.add('header-visible');
+  
+  return loadBlock(solutionHeaderBlock);
+}
+
+/**
  * loads a block named 'footer' into footer
  */
 

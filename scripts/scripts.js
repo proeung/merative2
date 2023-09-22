@@ -2,6 +2,7 @@ import {
   sampleRUM,
   buildBlock,
   loadHeader,
+  loadSolutionHeader,
   loadFooter,
   decorateButtons,
   decorateIcons,
@@ -923,10 +924,12 @@ async function loadLazy(doc) {
   const element = hash ? main.querySelector(hash) : false;
   if (hash && element) element.scrollIntoView();
 
-  if (!locationCheck('block-library') && !locationCheck('quick-links')) {
+  if (!locationCheck('block-library') && !locationCheck('quick-links') && !locationCheck('campaigns')) {
     loadHeader(doc.querySelector('header'));
     loadFooter(doc.querySelector('footer'));
     await buildBreadcrumb();
+  } else if(locationCheck('campaigns')) {
+    loadSolutionHeader(doc.querySelector('header'));
   }
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
