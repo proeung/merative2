@@ -181,8 +181,9 @@ main .section.content-intro-container.linkable-cards-container > .content-intro-
     padding-bottom: var(--spacer-layout-07);
   }
 
-  /* Section - Content Intro with Columns */
-  main .section.content-intro-container.columns-container > .content-intro-wrapper {
+  /* Section - Content Intro with Columns or Content */
+  main .section.content-intro-container.columns-container > .content-intro-wrapper,
+  main .section.content-intro-container.content-container > .content-intro-wrapper {
     padding-top: var(--spacer-layout-07);
     padding-bottom: var(--spacer-layout-06);
   }
