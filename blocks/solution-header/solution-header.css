@@ -112,7 +112,6 @@ header .solution-header-wrapper.is-sticky .solution-header ul li a {
 }
 
 .solution-header ul li a:hover,
-.solution-header ul li a:focus,
 .solution-header ul li a.active {
   background-size: 100% var(--spacer-element-02), auto;
   z-index: 6;

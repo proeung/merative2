@@ -30,69 +30,66 @@ export default function decorate(block) {
     }
   });
 
-  // Get all the list items within the ul
-const listItems = document.querySelectorAll('.solution-header__col-2 ul li');
+// Define the list of navigation links
+const navigationLinks = document.querySelectorAll('.solution-header__col-2 ul li a');
 
-// Get all the sections on the page with IDs that match the href values in the list items
-const sections = Array.from(listItems).map((item) => {
-  const targetId = item.querySelector('a').getAttribute('href').substring(1);
-  return document.getElementById(targetId);
+// Extract section IDs from navigation links
+const sectionIds = Array.from(navigationLinks).map((link) => {
+  return link.getAttribute('href').substring(1);
 });
 
-// Function to add the active class to the corresponding list item
-function setActiveClass(index) {
-  listItems.forEach((listItem, i) => {
-    if (i === index) {
-      listItem.classList.add('active');
-      listItem.querySelector('a').classList.add('active');
-    } else {
-      listItem.classList.remove('active');
-      listItem.querySelector('a').classList.remove('active');
+// Define the Intersection Observer options
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5, // Trigger when 50% of the element is in the viewport
+};
+
+// Create Intersection Observer callback function
+const handleIntersection = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const targetId = entry.target.getAttribute('id');
+      const correspondingLink = document.querySelector(`.solution-header__col-2 ul li a[href="#${targetId}"]`);
+
+      // Remove 'active' class from all links
+      navigationLinks.forEach((link) => {
+        link.classList.remove('active');
+      });
+
+      // Add 'active' class to the corresponding link
+      correspondingLink.classList.add('active');
     }
   });
-}
+};
 
-// Function to handle scrolling and active class removal
-function handleScroll() {
-  const scrollPosition = window.scrollY;
-  let activeSectionIndex = -1;
+// Create Intersection Observer instance
+const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-  // Find the index of the currently active section
-  for (let i = 0; i < sections.length; i++) {
-    const section = sections[i];
-    if (section) {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        activeSectionIndex = i;
-        break;
-      }
-    }
+// Add observer to each section
+sectionIds.forEach((sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    observer.observe(section);
   }
+});
 
-  setActiveClass(activeSectionIndex);
-}
-
-// Add an event listener to run the function when scrolling
-window.addEventListener('scroll', handleScroll);
-
-// Function to handle anchor links in the URL
-function handleAnchorLink() {
-  const currentHash = window.location.hash;
-  const targetIndex = Array.from(listItems).findIndex((item) => {
-    return item.querySelector('a').getAttribute('href') === currentHash;
+// Smooth scroll to anchor when a navigation link is clicked
+navigationLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: 'smooth',
+      });
+    }
   });
+});
 
-  setActiveClass(targetIndex);
-}
-
-// Add an event listener to run the function when the hash changes
-window.addEventListener('hashchange', handleAnchorLink);
-
-// Call the functions initially to set the active class based on the current scroll position and URL hash
-handleScroll();
-handleAnchorLink();
 
 
 }
