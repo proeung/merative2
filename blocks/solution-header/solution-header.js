@@ -1,3 +1,5 @@
+import { toSentenceCase } from '../../scripts/lib-franklin.js';
+
 export default function decorate(block) {
   const blockName = block.getAttribute('data-block-name');
   if (!blockName) {
@@ -30,66 +32,101 @@ export default function decorate(block) {
     }
   });
 
-// Define the list of navigation links
-const navigationLinks = document.querySelectorAll('.solution-header__col-2 ul li a');
+  // Define a function to generate and append a semantic navigation component
+  function generateAnchorLinkNav() {
+    const sectionsWithTitles = document.querySelectorAll('.section[data-title]');
+    const navItemsContainer = document.querySelector('.solution-header .solution-header__col-2');
 
-// Extract section IDs from navigation links
-const sectionIds = Array.from(navigationLinks).map((link) => {
-  return link.getAttribute('href').substring(1);
-});
+    // Create an unordered list for the navigation
+    const navList = document.createElement('ul');
+    navList.classList.add('nav-list'); // Add a class for styling or accessibility
 
-// Define the Intersection Observer options
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.5, // Trigger when 50% of the element is in the viewport
-};
+    sectionsWithTitles.forEach((section, index) => {
+      // Get the value of the data-title attribute
+      const sectionTitle = toSentenceCase(section.getAttribute('data-title'));
 
-// Create Intersection Observer callback function
-const handleIntersection = (entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const targetId = entry.target.getAttribute('id');
-      const correspondingLink = document.querySelector(`.solution-header__col-2 ul li a[href="#${targetId}"]`);
+      // Create a list item for each section
+      const listItem = document.createElement('li');
+      listItem.classList.add('nav-item'); // Add a class for styling or accessibility
 
-      // Remove 'active' class from all links
-      navigationLinks.forEach((link) => {
-        link.classList.remove('active');
-      });
+      // Create an anchor link element
+      const anchorLink = document.createElement('a');
+      anchorLink.textContent = sectionTitle;
+      anchorLink.href = `#${section.getAttribute('data-title')}`;
 
-      // Add 'active' class to the corresponding link
-      correspondingLink.classList.add('active');
-    }
-  });
-};
+      // Append the anchor link to the list item
+      listItem.appendChild(anchorLink);
 
-// Create Intersection Observer instance
-const observer = new IntersectionObserver(handleIntersection, observerOptions);
+      // Append the list item to the navigation list
+      navList.appendChild(listItem);
+    });
 
-// Add observer to each section
-sectionIds.forEach((sectionId) => {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    observer.observe(section);
+    // Append the navigation list to the nav items container
+    navItemsContainer.appendChild(navList);
   }
-});
 
-// Smooth scroll to anchor when a navigation link is clicked
-navigationLinks.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    
-    if (targetSection) {
-      window.scrollTo({
-        top: targetSection.offsetTop,
-        behavior: 'smooth',
-      });
+  // Call the function to generate and append the semantic navigation component
+  generateAnchorLinkNav();
+
+
+
+  // Define the list of navigation links
+  const navigationLinks = document.querySelectorAll('.solution-header__col-2 ul li a');
+
+  // Extract section IDs from navigation links
+  const sectionIds = Array.from(navigationLinks).map((link) => {
+    return link.getAttribute('href').substring(1);
+  });
+
+  // Define the Intersection Observer options
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5, // Trigger when 50% of the element is in the viewport
+  };
+
+  // Create Intersection Observer callback function
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const targetId = entry.target.getAttribute('id');
+        const correspondingLink = document.querySelector(`.solution-header__col-2 ul li a[href="#${targetId}"]`);
+
+        // Remove 'active' class from all links
+        navigationLinks.forEach((link) => {
+          link.classList.remove('active');
+        });
+
+        // Add 'active' class to the corresponding link
+        correspondingLink.classList.add('active');
+      }
+    });
+  };
+
+  // Create Intersection Observer instance
+  const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+  // Add observer to each section
+  sectionIds.forEach((sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      observer.observe(section);
     }
   });
-});
 
-
-
+  // Smooth scroll to anchor when a navigation link is clicked
+  navigationLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
 }

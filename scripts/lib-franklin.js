@@ -124,6 +124,24 @@ export function toCamelCase(name) {
 }
 
 /**
+ * Convert text to sentence case.
+ * @param {string} text property
+ * @returns {string} The sentence case value(s)
+ */
+export function toSentenceCase(text) {
+  // Split the text by hyphens or other non-word characters
+  const words = text.split(/[-\s]+/);
+
+  // Capitalize the first letter of each word and convert the rest to lowercase
+  const sentenceCaseWords = words.map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+
+  // Join the words back together with spaces
+  return sentenceCaseWords.join(' ');
+}
+
+/**
  * Replace icons with inline SVG and prefix with codeBasePath.
  * @param {Element} element
  */
@@ -268,9 +286,13 @@ export function decorateSections(main) {
       Object.keys(meta).forEach((key) => {
         if (key === 'style') {
           const styles = meta.style.split(',').map((style) => toClassName(style.trim()));
+
           styles.forEach((style) => section.classList.add(style));
-        } if (key === 'theme') {
+        } else if (key === 'theme') {
           section.setAttribute('data-theme', meta.theme);
+        } else if (key === 'id') {
+          section.setAttribute('data-title', toClassName(meta.id));
+          section.setAttribute('id', toClassName(meta.id));
         } else {
           section.dataset[toCamelCase(key)] = meta[key];
         }
