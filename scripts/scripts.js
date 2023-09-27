@@ -928,7 +928,7 @@ async function loadLazy(doc) {
     loadHeader(doc.querySelector('header'));
     loadFooter(doc.querySelector('footer'));
     await buildBreadcrumb();
-  } else if(locationCheck('campaigns')) {
+  } else if (locationCheck('campaigns')) {
     loadSolutionHeader(doc.querySelector('header'));
   }
 

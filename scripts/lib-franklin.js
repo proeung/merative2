@@ -133,9 +133,8 @@ export function toSentenceCase(text) {
   const words = text.split(/[-\s]+/);
 
   // Capitalize the first letter of each word and convert the rest to lowercase
-  const sentenceCaseWords = words.map(word => {
-    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-  });
+  // eslint-disable-next-line max-len
+  const sentenceCaseWords = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
 
   // Join the words back together with spaces
   return sentenceCaseWords.join(' ');
@@ -850,7 +849,7 @@ export function loadSolutionHeader(header) {
   const solutionHeaderBlock = document.querySelector('.solution-header-wrapper');
   header.append(solutionHeaderBlock);
   document.querySelector('body').classList.add('header-visible');
-  
+
   return loadBlock(solutionHeaderBlock);
 }
 

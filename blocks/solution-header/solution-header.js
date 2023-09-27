@@ -35,13 +35,13 @@ export default function decorate(block) {
   // Define a function to generate and append a semantic navigation component
   function generateAnchorLinkNav() {
     const sectionsWithTitles = document.querySelectorAll('.section[data-title]');
-    const navItemsContainer = document.querySelector('.solution-header .solution-header__col-2');
+    const navItemsContainer = document.querySelector(`.${blockName} .${blockName}__col-2`);
 
     // Create an unordered list for the navigation
     const navList = document.createElement('ul');
     navList.classList.add('nav-list'); // Add a class for styling or accessibility
 
-    sectionsWithTitles.forEach((section, index) => {
+    sectionsWithTitles.forEach((section) => {
       // Get the value of the data-title attribute
       const sectionTitle = toSentenceCase(section.getAttribute('data-title'));
 
@@ -68,15 +68,11 @@ export default function decorate(block) {
   // Call the function to generate and append the semantic navigation component
   generateAnchorLinkNav();
 
-
-
   // Define the list of navigation links
   const navigationLinks = document.querySelectorAll('.solution-header__col-2 ul li a');
 
   // Extract section IDs from navigation links
-  const sectionIds = Array.from(navigationLinks).map((link) => {
-    return link.getAttribute('href').substring(1);
-  });
+  const sectionIds = Array.from(navigationLinks).map((link) => link.getAttribute('href').substring(1));
 
   // Define the Intersection Observer options
   const observerOptions = {
@@ -120,7 +116,7 @@ export default function decorate(block) {
       e.preventDefault();
       const targetId = link.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
-      
+
       if (targetSection) {
         window.scrollTo({
           top: targetSection.offsetTop,
