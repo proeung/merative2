@@ -847,10 +847,12 @@ export function loadHeader(header) {
 
 export function loadSolutionHeader(header) {
   const solutionHeaderBlock = document.querySelector('.solution-header-wrapper');
-  header.append(solutionHeaderBlock);
-  document.querySelector('body').classList.add('header-visible');
 
-  return loadBlock(solutionHeaderBlock);
+  if (solutionHeaderBlock) {
+    header.append(solutionHeaderBlock);
+    document.querySelector('body').classList.add('header-visible');
+  }
+
 }
 
 /**
