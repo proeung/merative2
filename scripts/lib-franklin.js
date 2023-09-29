@@ -859,7 +859,14 @@ export function loadSolutionHeader(header) {
 
   if (solutionHeaderBlock) {
     header.append(solutionHeaderBlock);
-    document.querySelector('body').classList.add('header-visible');
+
+    // Create a promise that resolves when the next animation frame is available
+    const waitForAnimationFrame = () => new Promise(requestAnimationFrame);
+
+    // Wait for the next animation frame before adding the class
+    waitForAnimationFrame().then(() => {
+      document.querySelector('body').classList.add('header-visible');
+    });
   }
 }
 

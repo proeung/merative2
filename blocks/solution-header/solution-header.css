@@ -1,6 +1,15 @@
 /* Block - Solution Header */
-.header-visible .solution-header[data-block-status="loaded"] {
-  opacity: 1;
+.solution-header-wrapper {
+  opacity: 0;
+  position: fixed;
+  border-bottom: 1px solid var(--neutral-sand);
+  width: 100%;
+  height: var(--nav-height-desktop);
+  background-color: var(--neutral-bone);
+  left: 0;
+  top: 0;
+  transition: all .5s ease;
+  z-index: 99999;
 }
 
 .solution-header {
@@ -8,6 +17,11 @@
   max-width: var(--secton-max-container);
   height: 100%;
   margin: 0 auto;
+}
+
+.header-visible .solution-header-wrapper,
+.header-visible .solution-header[data-block-status="loaded"] {
+  opacity: 1;
 }
 
 .solution-header .solution-header__inner {
@@ -91,18 +105,6 @@
 }
 
 /* Sticky - Solution Header */
-.solution-header-wrapper {
-  position: fixed;
-  border-bottom: 1px solid var(--neutral-sand);
-  width: 100%;
-  height: var(--nav-height-desktop);
-  background-color: var(--neutral-bone);
-  left: 0;
-  top: 0;
-  transition: all .5s ease;
-  z-index: 99999;
-}
-
 .solution-header-wrapper.is-sticky {
   background-color: var(--neutral-carbon);
   border-bottom: 1px solid var(--neutral-carbon);
