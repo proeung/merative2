@@ -1,5 +1,3 @@
-import { toSentenceCase } from '../../scripts/lib-franklin.js';
-
 export default function decorate(block) {
   const blockName = block.getAttribute('data-block-name');
   if (!blockName) {
@@ -43,7 +41,7 @@ export default function decorate(block) {
 
     sectionsWithTitles.forEach((section) => {
       // Get the value of the data-title attribute
-      const sectionTitle = toSentenceCase(section.getAttribute('data-title'));
+      const sectionTitle = section.getAttribute('data-title');
 
       // Create a list item for each section
       const listItem = document.createElement('li');
@@ -52,7 +50,8 @@ export default function decorate(block) {
       // Create an anchor link element
       const anchorLink = document.createElement('a');
       anchorLink.textContent = sectionTitle;
-      anchorLink.href = `#${section.getAttribute('data-title')}`;
+      const achorLinkID = section.getAttribute('id');
+      anchorLink.href = `#${achorLinkID}`;
 
       // Append the anchor link to the list item
       listItem.appendChild(anchorLink);
@@ -69,7 +68,7 @@ export default function decorate(block) {
   generateAnchorLinkNav();
 
   // Define the list of navigation links
-  const navigationLinks = document.querySelectorAll('.solution-header__col-2 ul li a');
+  const navigationLinks = document.querySelectorAll(`.${blockName}__col-2 ul li a`);
 
   // Extract section IDs from navigation links
   const sectionIds = Array.from(navigationLinks).map((link) => link.getAttribute('href').substring(1));
@@ -86,7 +85,7 @@ export default function decorate(block) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const targetId = entry.target.getAttribute('id');
-        const correspondingLink = document.querySelector(`.solution-header__col-2 ul li a[href="#${targetId}"]`);
+        const correspondingLink = document.querySelector(`.${blockName}__col-2 ul li a[href="#${targetId}"]`);
 
         // Remove 'active' class from all links
         navigationLinks.forEach((link) => {

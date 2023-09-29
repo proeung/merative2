@@ -53,11 +53,26 @@ main .section.solution-footer-container > div:last-child {
   margin: 0;
 }
 
+.solution-footer ul li .cookie-consent {
+  color: var(--neutral-white);
+}
+
+/* stylelint-disable no-descending-specificity */
 .solution-footer ul li a,
 .solution-footer ul li a:not(.button):any-link {
   color: var(--neutral-white);
-  border-bottom: 0;
+  border-color: transparent;
 }
+
+.solution-footer ul li a:hover,
+.solution-footer ul li a:not(.button):any-link:hover {
+  background: none;
+  color: var(--neutral-white);
+  border-bottom: 1px solid var(--neutral-white);
+  border-image-source: unset;
+  -webkit-text-fill-color: var(--neutral-white);
+}
+/* stylelint-enable no-descending-specificity */
 
 .solution-footer .default-content-wrapper ul + p {
   margin: 0 0 0 var(--spacer-element-08);

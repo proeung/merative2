@@ -281,21 +281,30 @@ export function decorateSections(main) {
     const sectionMeta = section.querySelector('div.section-metadata');
     if (sectionMeta) {
       const meta = readBlockConfig(sectionMeta);
+      let styles;
 
       Object.keys(meta).forEach((key) => {
-        if (key === 'style') {
-          const styles = meta.style.split(',').map((style) => toClassName(style.trim()));
-
-          styles.forEach((style) => section.classList.add(style));
-        } else if (key === 'theme') {
-          section.setAttribute('data-theme', meta.theme);
-        } else if (key === 'id') {
-          section.setAttribute('data-title', toClassName(meta.id));
-          section.setAttribute('id', toClassName(meta.id));
-        } else {
-          section.dataset[toCamelCase(key)] = meta[key];
+        switch (key) {
+          case 'style':
+            styles = meta.style.split(',').map((style) => toClassName(style.trim()));
+            styles.forEach((style) => section.classList.add(style));
+            break;
+          case 'theme':
+            section.setAttribute('data-theme', meta.theme);
+            break;
+          case 'id':
+            section.setAttribute('id', toClassName(meta.id));
+            if (key === 'title') {
+              section.setAttribute('data-title', meta.title);
+            } else {
+              section.setAttribute('data-title', toSentenceCase(meta.id));
+            }
+            break;
+          default:
+            section.dataset[toCamelCase(key)] = meta[key];
         }
       });
+
       sectionMeta.parentNode.remove();
     }
   });
@@ -852,7 +861,6 @@ export function loadSolutionHeader(header) {
     header.append(solutionHeaderBlock);
     document.querySelector('body').classList.add('header-visible');
   }
-
 }
 
 /**
