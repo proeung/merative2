@@ -748,6 +748,24 @@ export async function lookupDocuments(pathnames) {
 }
 
 /**
+ * Gets details about pages that are indexed filtered by path
+ * @param {String} filter return only pages that start with this filter
+ */
+
+export async function getSearchIndex(filter) {
+  if (!window.pageIndex) {
+    const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
+    const json = await resp.json();
+    window.pageIndex = {
+      data: json.data,
+    };
+  }
+
+  const result = window.pageIndex.data.filter((row) => row.path.startsWith(filter));
+  return (result);
+}
+
+/**
  * Gets pdf and documents list that are indexed
  */
 
