@@ -173,6 +173,7 @@ body.microsites.header-visible main {
   .solution-header-wrapper.is-sticky .solution-header .solution-header__inner .solution-header__col-1 {
     margin: var(--spacer-element-05) var(--spacer-element-08);
   }
+  
   .solution-header-wrapper.is-sticky .solution-header .solution-header__inner .solution-header__col-3 {
     display: none;
   }
